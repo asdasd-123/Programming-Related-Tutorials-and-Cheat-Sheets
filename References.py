@@ -1,4 +1,14 @@
 # ==============================================================
+# Docstrings
+# ==============================================================
+"""
+Doc strings are a multi line comment used at the very start
+of a function to explain it's purpose
+It can be accessed and printed through
+    function.__doc__
+"""
+
+# ==============================================================
 # Variable Types
 # ==============================================================
 x = 10                          # Integer
