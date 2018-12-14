@@ -221,7 +221,9 @@ print(small)                    # Prints the answer to the screen
 # Exception Handling
 # ==============================================================
 # If your trying to track down a bug, you can use try/except.
-# Don't use except without a specific error. Bad practice
+# Don't use except without a specific error. Bad practice.
+# Can add multiple except blocks like 'elif'.
+# can include multiple error types in one except with commas.
 # ==============================================================
 
 try:                                # Will try the code block below
