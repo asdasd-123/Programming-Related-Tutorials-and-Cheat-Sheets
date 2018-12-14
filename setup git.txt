@@ -1,7 +1,7 @@
 =============================================
 Learn git
 =============================================
-30 min tutorial covering setting up of account
+30 min tutorial covering setting up of account.
 https://tutorialzine.com/2016/06/learn-git-in-30-minutes
 
 =============================================
@@ -9,34 +9,40 @@ Git Cheat Sheet
 =============================================
 
 git innit
-  Setup git repo in current directory (CD %directory_name%)
+  Setup git repo in current directory (CD %directory_name%).
 
 git status
-  Returns status of files
+  Returns status of files.
 
 git add -a (or just filename)
-  Adds all or specific file to staging area
+  Adds all or specific file to staging area.
 
 git commit -m "update message here"
-  Commits all changes in the staging area
+  Commits all changes in the staging area.
 
 git remote add origin https://githublinkhere
   Connects to github. Origin is traditionally the default name for the main one,
   but can be changed to anything.
 
 git push <remote name> <branch>
-  i.e git push origin master (Both the defaults)
-  Pushes changes to remote repository (i.e github)
+  i.e git push origin master (Both the defaults).
+  Pushes changes to remote repository (i.e github).
 
 git pull <remote name> <branch>
-  i.e git pull origin master
-  Pulls changes from the remote repository
+  i.e git pull origin master.
+  Pulls changes from the remote repository.
 
 git branch <name>
-  creates a new branch. Doesn't chose it through
+  creates a new branch. Doesn't chose it through.
 
 git checkout <branch name>
-  selects different branch to work on
+  selects different branch to work on.
+
+git merge <branch name>
+  merges selected branch into current one. Make sure in master branch first.
+
+git branch -d <branch name>
+  deleted select branch. Useful after a merge.
 
 
 
