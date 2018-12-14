@@ -239,4 +239,9 @@ finally:                            # not used as much, but will run regardless
 #   or
 #   raise ZeroDivisionError("don't divide by zero!")
 #
+
+# ==============================================================
+# Assertions
+# ==============================================================
+
 input("Question here")      # console input
