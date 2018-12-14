@@ -230,7 +230,13 @@ try:                                # Will try the code block below
     y = 5 / 0                       # This bit failes (divide by zero)
 except ZeroDivisionError:           # If error found above, run this code block
     print("there was an error!")
+    raise                           # displays the original error
 finally:                            # not used as much, but will run regardless
     print("This code will run no matter what")
+
+# You can manually raise exceptions by using:
+#   raise ZeroDivisionError
+#   or
+#   raise ZeroDivisionError("don't divide by zero!")
 #
 input("Question here")      # console input
