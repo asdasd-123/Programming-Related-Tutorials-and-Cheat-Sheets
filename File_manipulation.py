@@ -44,7 +44,15 @@ lines_in_file = len(open("test.txt").readlines())
 
 
 # use for loop to read line by line instead:
-file = open("filename.txt", "r")
+file = open("test.txt", "r")
 for line in file:
     print(line)                     # includes the \n newline characters
 file.close()
+
+# ==============================================================
+# Writing to files
+# ==============================================================
+
+file = open("Test_files\\new_file.txt", "w")    # Opens file in write mode
+file.write("This has been written to a file")   # Writes text to file
+file.close()                                    # Closes file
