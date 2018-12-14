@@ -39,6 +39,10 @@ file = open("filename.txt", "r")
 print(file.readlines())             # includes the \n newline characters
 file.close()
 
+# can be condenses into single line like follows:
+lines_in_file = len(open("test.txt").readlines())
+
+
 # use for loop to read line by line instead:
 file = open("filename.txt", "r")
 for line in file:
