@@ -217,5 +217,17 @@ small = count_small(lotto)      # Call our function above and send it
 
 print(small)                    # Prints the answer to the screen
 
+# ==============================================================
+# Exception Handling
+# ==============================================================
+# If your trying to track down a bug, you can use try/except.
+# Don't use except without a specific error. Bad practice
+# ==============================================================
+
+try:                                # Will try the code block below
+    y = 5 / 0                       # This bit failes (divide by zero)
+except ZeroDivisionError:           # If error found above, run this code block
+    print("there was an error!")
+
 #
 input("Question here")      # console input
