@@ -220,7 +220,7 @@ print(small)                    # Prints the answer to the screen
 # ==============================================================
 # Exception Handling
 # ==============================================================
-# If your trying to track down a bug, you can use try/except.
+# If your trying to track down a bug, you can use try/except/finally.
 # Don't use except without a specific error. Bad practice.
 # Can add multiple except blocks like 'elif'.
 # can include multiple error types in one except with commas.
@@ -230,6 +230,7 @@ try:                                # Will try the code block below
     y = 5 / 0                       # This bit failes (divide by zero)
 except ZeroDivisionError:           # If error found above, run this code block
     print("there was an error!")
-
+finally:                            # not used as much, but will run regardless
+    print("This code will run no matter what")
 #
 input("Question here")      # console input
