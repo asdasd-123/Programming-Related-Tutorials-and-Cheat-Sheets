@@ -56,3 +56,19 @@ file.close()
 file = open("Test_files\\new_file.txt", "w")    # Opens file in write mode
 file.write("This has been written to a file")   # Writes text to file
 file.close()                                    # Closes file
+
+# The write() method also returns the number of bytes written, for example:
+msg = "Hello world!"
+file = open("Test_files\\new_file.txt", "w")
+amount_written = file.write(msg)
+print(amount_written)                           # Would print 12
+file.close()
+
+# It is good practice to avoid wasting resources by making sure
+# that files are always closed after they have been used.
+# One way of doing this is to use try and finally, like below:
+try:
+    f = open("Test_files\\new_file.txt")
+    print(f.read())
+finally:
+    f.close()
