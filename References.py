@@ -243,5 +243,12 @@ finally:                            # not used as much, but will run regardless
 # ==============================================================
 # Assertions
 # ==============================================================
+# Used to make sure something is "True"
+# if it succeeds, the code continues
+# If it fails, it throws an Assertation error
+
+assert 5 == (2 + 3)     # The code will carry on running because this is True
+# assert 5 == 1           This would raise an error becuase it returns False
+
 
 input("Question here")      # console input
