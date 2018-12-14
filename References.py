@@ -249,6 +249,7 @@ finally:                            # not used as much, but will run regardless
 
 assert 5 == (2 + 3)     # The code will carry on running because this is True
 # assert 5 == 1           This would raise an error becuase it returns False
+assert 5 == 5, "If the assertain fails, this text is displayed"
 
 
 input("Question here")      # console input
