@@ -1,0 +1,35 @@
+=============================================
+Learn git
+=============================================
+
+https://tutorialzine.com/2016/06/learn-git-in-30-minutes
+
+=============================================
+Git Cheat Sheet
+=============================================
+
+git innit
+  Setup git repo in current directory (CD %directory_name%)
+
+git status
+  Returns status of files
+
+
+
+
+=============================================
+Setting up git
+=============================================
+
+1)  Install git for windows (https://gitforwindows.org/)
+
+2)  Open CMD
+      Setup username with 'git config --global user.name "JPJ"'
+      Setup email with 'git config --global user.email jack.pj@live.co.uk'
+
+3)  Navigate to folder in CMD where you want to setup git repository
+      "CD %directory_name%"
+
+3)  run: git init
+
+4)
