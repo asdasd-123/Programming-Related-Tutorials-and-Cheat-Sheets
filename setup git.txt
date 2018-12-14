@@ -1,7 +1,7 @@
 =============================================
 Learn git
 =============================================
-
+30 min tutorial covering setting up of account
 https://tutorialzine.com/2016/06/learn-git-in-30-minutes
 
 =============================================
@@ -13,6 +13,26 @@ git innit
 
 git status
   Returns status of files
+
+git add -a (or just filename)
+  Adds all or specific file to staging area
+
+git commit -m "update message here"
+  Commits all changes in the staging area
+
+git remote add origin https://githublinkhere
+  Connects to github. Origin is traditionally the default name for the main one,
+  but can be changed to anything.
+
+git push [remote name] [branch]
+  i.e git push origin master (Both the defaults)
+  Pushes changes to remote repository (i.e github)
+
+git pull [remote name] [branch]
+  i.e git pull origin master
+  Pulls changes from the remote repository
+
+
 
 
 
