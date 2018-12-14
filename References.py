@@ -193,6 +193,7 @@ for item in range(5):
 
 # ==============================================================
 # Functions
+# ==============================================================
 # Functions aren't used until they are 'called'.
 # In this section, we first create a function,
 # But dont call it until later
