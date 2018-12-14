@@ -1,7 +1,6 @@
 # ==============================================================
 # opening / closing Files
 # ==============================================================
-
 my_file = open("test.txt")         # opens the file in readonly mode
 my_file = open("test.txt", "r")    # opens the file in readonly mode
 my_file = open("test.txt", "w")    # opens the file in write mode (clears)
@@ -29,8 +28,19 @@ my_file.close()     # Closes the file
 # ==============================================================
 # Reading from files
 # ==============================================================
-
+# Read entire contents:
 my_file = open("test.txt", "r")     # Opens file in read mode
 cont = my_file.read()               # stores contents of my_file
 print(cont)                         # prints contents to console
 my_file.close()                     # closes file
+
+# Read contents by line, store as list:
+file = open("filename.txt", "r")
+print(file.readlines())             # includes the \n newline characters
+file.close()
+
+# use for loop to read line by line instead:
+file = open("filename.txt", "r")
+for line in file:
+    print(line)                     # includes the \n newline characters
+file.close()
