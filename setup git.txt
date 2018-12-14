@@ -24,13 +24,19 @@ git remote add origin https://githublinkhere
   Connects to github. Origin is traditionally the default name for the main one,
   but can be changed to anything.
 
-git push [remote name] [branch]
+git push <remote name> <branch>
   i.e git push origin master (Both the defaults)
   Pushes changes to remote repository (i.e github)
 
-git pull [remote name] [branch]
+git pull <remote name> <branch>
   i.e git pull origin master
   Pulls changes from the remote repository
+
+git branch <name>
+  creates a new branch. Doesn't chose it through
+
+git checkout <branch name>
+  selects different branch to work on
 
 
 
