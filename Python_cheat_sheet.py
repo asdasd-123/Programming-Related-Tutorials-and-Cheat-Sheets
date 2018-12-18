@@ -228,6 +228,14 @@ if (not(x < 7) or (True and not(x != 5))):
 else:
     print('if the above statement is false, this message will appear')
 
+# Any/All can be used to check if all or some items in a for loop return True
+nums = [55, 44, 33, 22, 11]
+if all([i > 5 for i in nums]):          # Returns True
+    print("All larger than 5")
+
+if any([i % 2 == 0 for i in nums]):     # Returns True
+    print("At least one is even")
+
 # ==============================================================
 # While Loops
 # ==============================================================
