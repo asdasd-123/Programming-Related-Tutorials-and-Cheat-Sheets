@@ -70,6 +70,34 @@ str.isalpha()           # Only letters? - False (space not a letter)
 str[0]                  # Return first character - "T"
 str[1:3]                # Return 2nd to 3rd (4th - 1) character - "es"
 str[3:]                 # Return 4th to end characters - "t String"
+# The following allows numbers to be put into a string without converting first
+# using {} around the inputs
+msg = "Numbers: {0} {1} {2}".format(4, 5, 6.5)
+print(msg)
+
+print("{0}{1}{0}".format("abra", "cad"))    # prints abracadabra for example
+a = "{x}, {y}".format(x=5, y=12)            # Can also use named arguments
+
+# Useful string functions:
+# Join : joins a list of strings with another string as a separator
+print(", ".join(["spam", "eggs", "ham"]))
+# prints "spam, eggs, ham"
+
+# Split - split is the opposite of join, turning a string with
+# a certain separator into a list.
+print("spam, eggs, ham".split(", "))
+# prints "['spam', 'eggs', 'ham']"
+
+# Replace - replaces one substring in a string with another
+print("Hello ME".replace("ME", "world"))
+# prints "Hello world"
+
+# Startswith/Endswith - determine if there is a substring
+# at the start and end of a string respectively
+print("This is a sentence.".startswith("This"))
+# prints "True"
+print("This is a sentence.".endswith("sentence."))
+# prints "True"
 
 # ==============================================================
 # range()
@@ -88,12 +116,16 @@ range(3, 20, 2)     # produces 3,5,7,9,11,13,15,17,19
 # Lists
 # ==============================================================
 # Lists can be placed inside other lists
+# References start at 0!
 # ==============================================================
 empty_list = []                             # A list can be initialised empty
 xlist = ['a', 'b', 'c', 'e', 'd', 'f', 'f']     # or with data already in it.
 
-xlist[1:3]              # Return 2nd to 3rd (4th - 1) character - "b,c"
-xlist[1:6:3]            # 2nd through 5th with step of 3 - 'b,d'
+xlist[1:3]              # Return 1st to 2nd (3rd - 1) character - "b,c"
+xlist[1:6:3]            # Returns 1st through 5th character at 3 steps - 'b,d'
+xlist[:-3]              # Negative values count back from the end - 'a,b,c,e'
+xlist[-3:-1]            # 'e,d,f'
+xlist[::-1]     # shortcut to reverse a list. (Full list stepping backwards)
 xlist.append("g")       # Adds "g" to the end of the list
 xlist.index('d')        # Gets index value of 'd'. in this case, 4 (start at 0)
 xlist.sort()            # Sorts the list
@@ -105,11 +137,36 @@ max(xlist)              # returns the max item in the list (g in this case)
 min(xlist)              # returns the min item in the list (a in this case)
 xlist.clear()           # Empties the entire List
 xlist += ['h', 'i', 'j']    # Adds the new list to the end of the current
-xlist *= 3              # Muliplies the list the same as a string
+xlist *= 3                  # Muliplies the list the same as a string
+xlist[2] = 'c'              # Sets item 2 in the list to 'c'
 new_list = list(range(10))  # Range can be used to populate a list, but
 #                             needs converting with list(). This one creates
 #                             a list with all inegers from 0-9
 new_list = list(range(3, 8))    # Creates list of 3,4,5,6,7 (not 8)
+cubes = [i**3 for i in range(5)]    # for loops can also be used
+
+# If statements can also be bundled in too as below:
+evens = [i**2 for i in range(10) if i**2 % 2 == 0]
+# returns 0,4,16,36,64
+
+# ==============================================================
+# Tuples
+# ==============================================================
+# Tuples are more efficient lists buts contents cannot be changed
+# 'Immutable'
+# ==============================================================
+xTuple = ('a', 'b', 'c', 'd')   # similar to list but with (), not []
+xTuple2 = 'a', 'b', 'c'         # Also valid without any brackets
+# xTuple[2] = 'c'   Would generate an error
+
+# Tuples can also be "packed" and "unpacked" which can be useful
+# for creating variables. i.eval
+fruits = ("Apple", "Pear", "Banana")
+f1, f2, f3 = fruits
+
+print(f1)   # prints "Apple"
+print(f2)   # prints "Pear"
+print(f3)   # prints "Banana"
 
 # ==============================================================
 # Dictionaries
@@ -119,6 +176,15 @@ xDict = {'Key1': 1, 'Key2': 2, 'Key3': 3, 'Key4': 4, 'Key5': 5}
 xDict['Key1']           # returns the item in Key1 - 1
 xDict['KeyN'] = 'temp'  # Appends a new key with value 'temp'
 del xDict['KeyN']       # Deletes 'KeyN' from the Dictionary
+
+# For checking if a key is in a dictionary, use 'in' or 'not in'
+# For example:
+print('Key1' in xDict)      # Prints True
+print('abc' not in xDict)   # Prints True
+print('Key3' not in xDict)  # Prints False
+
+# Can also use 'get' to return a set value if not found (default 'none')
+print(xDict.get('key6', "not found"))    # Prints 'not found'
 
 # ==============================================================
 # If Statements
@@ -162,6 +228,14 @@ if (not(x < 7) or (True and not(x != 5))):
 else:
     print('if the above statement is false, this message will appear')
 
+# Any/All can be used to check if all or some items in a for loop return True
+nums = [55, 44, 33, 22, 11]
+if all([i > 5 for i in nums]):          # Returns True
+    print("All larger than 5")
+
+if any([i % 2 == 0 for i in nums]):     # Returns True
+    print("At least one is even")
+
 # ==============================================================
 # While Loops
 # ==============================================================
@@ -191,6 +265,14 @@ for item in temp_list:
 for item in range(5):
     print('spam')       # This is print 'spam' 5 times
 
+# Enumerate can be used to iterate through values AND indices
+# of a list simultaneously. Useful when convertig lists to Dictionaries
+nums = [55, 44, 33, 22, 11]
+dict = {}
+for v in enumerate(nums):
+    key = v[0]
+    dict[key] = v[1]
+print(dict)
 
 # ==============================================================
 # Functions
