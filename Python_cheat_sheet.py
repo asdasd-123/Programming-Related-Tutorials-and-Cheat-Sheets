@@ -71,6 +71,7 @@ str[0]                  # Return first character - "T"
 str[1:3]                # Return 2nd to 3rd (4th - 1) character - "es"
 str[3:]                 # Return 4th to end characters - "t String"
 
+
 # ==============================================================
 # range()
 # ==============================================================
@@ -116,6 +117,10 @@ new_list = list(range(10))  # Range can be used to populate a list, but
 #                             a list with all inegers from 0-9
 new_list = list(range(3, 8))    # Creates list of 3,4,5,6,7 (not 8)
 cubes = [i**3 for i in range(5)]    # for loops can also be used
+
+# If statements can also be bundled in too as below:
+evens = [i**2 for i in range(10) if i**2 % 2 == 0]
+# returns 0,4,16,36,64
 
 # ==============================================================
 # Tuples
