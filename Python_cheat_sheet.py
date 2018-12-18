@@ -70,6 +70,10 @@ str.isalpha()           # Only letters? - False (space not a letter)
 str[0]                  # Return first character - "T"
 str[1:3]                # Return 2nd to 3rd (4th - 1) character - "es"
 str[3:]                 # Return 4th to end characters - "t String"
+# The following allows numbers to be put into a string without converting first
+# using {} around the inputs
+msg = "Numbers: {0} {1} {2}".format(4, 5, 6.5)
+print(msg)
 
 
 # ==============================================================
