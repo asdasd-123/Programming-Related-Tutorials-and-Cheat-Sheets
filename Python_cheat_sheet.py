@@ -95,6 +95,9 @@ xlist = ['a', 'b', 'c', 'e', 'd', 'f', 'f']     # or with data already in it.
 
 xlist[1:3]              # Return 1st to 2nd (3rd - 1) character - "b,c"
 xlist[1:6:3]            # Returns 1st through 5th character at 3 steps - 'b,d'
+xlist[:-3]              # Negative values count back from the end - 'a,b,c,e'
+xlist[-3:-1]            # 'e,d,f'
+xlist[::-1]     # shortcut to reverse a list. (Full list stepping backwards)
 xlist.append("g")       # Adds "g" to the end of the list
 xlist.index('d')        # Gets index value of 'd'. in this case, 4 (start at 0)
 xlist.sort()            # Sorts the list
