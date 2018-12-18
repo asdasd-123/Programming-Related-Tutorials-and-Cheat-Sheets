@@ -105,10 +105,20 @@ min(xlist)              # returns the min item in the list (a in this case)
 xlist.clear()           # Empties the entire List
 xlist += ['h', 'i', 'j']    # Adds the new list to the end of the current
 xlist *= 3                  # Muliplies the list the same as a string
+xlist[2] = 'c'              # Sets item 2 in the list to 'c'
 new_list = list(range(10))  # Range can be used to populate a list, but
 #                             needs converting with list(). This one creates
 #                             a list with all inegers from 0-9
 new_list = list(range(3, 8))    # Creates list of 3,4,5,6,7 (not 8)
+
+# ==============================================================
+# Tuples
+# ==============================================================
+# Tuples are more efficient lists buts contents cannot be changed
+# 'Immutable'
+# ==============================================================
+xTuple = ('a', 'b', 'c', 'd')   # similar to list but with (), not []
+# xTuple[2] = 'c'   Would generate an error
 
 # ==============================================================
 # Dictionaries
