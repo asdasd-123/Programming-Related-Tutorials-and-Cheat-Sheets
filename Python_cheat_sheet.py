@@ -88,11 +88,13 @@ range(3, 20, 2)     # produces 3,5,7,9,11,13,15,17,19
 # Lists
 # ==============================================================
 # Lists can be placed inside other lists
+# References start at 0!
 # ==============================================================
 empty_list = []                             # A list can be initialised empty
 xlist = ['a', 'b', 'c', 'e', 'd', 'f', 'f']     # or with data already in it.
 
-xlist[1:3]              # Return 2nd to 3rd (4th - 1) character - "b,c"
+xlist[1:3]              # Return 1st to 2nd (3rd - 1) character - "b,c"
+xlist[1:6:3]            # Returns 1st through 5th character at 3 steps - 'b,d'
 xlist.append("g")       # Adds "g" to the end of the list
 xlist.index('d')        # Gets index value of 'd'. in this case, 4 (start at 0)
 xlist.sort()            # Sorts the list
