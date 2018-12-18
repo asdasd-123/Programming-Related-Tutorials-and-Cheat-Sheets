@@ -118,6 +118,7 @@ new_list = list(range(3, 8))    # Creates list of 3,4,5,6,7 (not 8)
 # 'Immutable'
 # ==============================================================
 xTuple = ('a', 'b', 'c', 'd')   # similar to list but with (), not []
+xTuple2 = 'a', 'b', 'c'         # Also valid without any brackets
 # xTuple[2] = 'c'   Would generate an error
 
 # Tuples can also be "packed" and "unpacked" which can be useful
