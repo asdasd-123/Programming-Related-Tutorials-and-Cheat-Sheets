@@ -125,6 +125,9 @@ print('Key1' in xDict)      # Prints True
 print('abc' not in xDict)   # Prints True
 print('Key3' not in xDict)  # Prints False
 
+# Can also use 'get' to return a set value if not found (default 'none')
+print(xDict.get('key6', "not found"))    # Prints 'not found'
+
 # ==============================================================
 # If Statements
 # ==============================================================
