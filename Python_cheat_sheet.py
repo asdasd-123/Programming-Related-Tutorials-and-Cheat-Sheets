@@ -120,6 +120,15 @@ new_list = list(range(3, 8))    # Creates list of 3,4,5,6,7 (not 8)
 xTuple = ('a', 'b', 'c', 'd')   # similar to list but with (), not []
 # xTuple[2] = 'c'   Would generate an error
 
+# Tuples can also be "packed" and "unpacked" which can be useful
+# for creating variables. i.eval
+fruits = ("Apple", "Pear", "Banana")
+f1, f2, f3 = fruits
+
+print(f1)   # prints "Apple"
+print(f2)   # prints "Pear"
+print(f3)   # prints "Banana"
+
 # ==============================================================
 # Dictionaries
 # ==============================================================
