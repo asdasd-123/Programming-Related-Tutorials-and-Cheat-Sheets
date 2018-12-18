@@ -75,6 +75,8 @@ str[3:]                 # Return 4th to end characters - "t String"
 msg = "Numbers: {0} {1} {2}".format(4, 5, 6.5)
 print(msg)
 
+print("{0}{1}{0}".format("abra", "cad"))    # prints abracadabra for example
+
 
 # ==============================================================
 # range()
