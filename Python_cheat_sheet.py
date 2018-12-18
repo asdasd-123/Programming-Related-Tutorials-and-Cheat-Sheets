@@ -76,7 +76,28 @@ msg = "Numbers: {0} {1} {2}".format(4, 5, 6.5)
 print(msg)
 
 print("{0}{1}{0}".format("abra", "cad"))    # prints abracadabra for example
+a = "{x}, {y}".format(x=5, y=12)            # Can also use named arguments
 
+# Useful string functions:
+# Join : joins a list of strings with another string as a separator
+print(", ".join(["spam", "eggs", "ham"]))
+# prints "spam, eggs, ham"
+
+# Split - split is the opposite of join, turning a string with
+# a certain separator into a list.
+print("spam, eggs, ham".split(", "))
+# prints "['spam', 'eggs', 'ham']"
+
+# Replace - replaces one substring in a string with another
+print("Hello ME".replace("ME", "world"))
+# prints "Hello world"
+
+# Startswith/Endswith - determine if there is a substring
+# at the start and end of a string respectively
+print("This is a sentence.".startswith("This"))
+# prints "True"
+print("This is a sentence.".endswith("sentence."))
+# prints "True"
 
 # ==============================================================
 # range()
