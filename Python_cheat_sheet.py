@@ -115,6 +115,7 @@ new_list = list(range(10))  # Range can be used to populate a list, but
 #                             needs converting with list(). This one creates
 #                             a list with all inegers from 0-9
 new_list = list(range(3, 8))    # Creates list of 3,4,5,6,7 (not 8)
+cubes = [i**3 for i in range(5)]    # for loops can also be used
 
 # ==============================================================
 # Tuples
