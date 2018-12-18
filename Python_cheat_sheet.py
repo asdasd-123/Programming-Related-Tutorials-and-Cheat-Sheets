@@ -104,7 +104,7 @@ max(xlist)              # returns the max item in the list (g in this case)
 min(xlist)              # returns the min item in the list (a in this case)
 xlist.clear()           # Empties the entire List
 xlist += ['h', 'i', 'j']    # Adds the new list to the end of the current
-xlist *= 3              # Muliplies the list the same as a string
+xlist *= 3                  # Muliplies the list the same as a string
 new_list = list(range(10))  # Range can be used to populate a list, but
 #                             needs converting with list(). This one creates
 #                             a list with all inegers from 0-9
@@ -118,6 +118,12 @@ xDict = {'Key1': 1, 'Key2': 2, 'Key3': 3, 'Key4': 4, 'Key5': 5}
 xDict['Key1']           # returns the item in Key1 - 1
 xDict['KeyN'] = 'temp'  # Appends a new key with value 'temp'
 del xDict['KeyN']       # Deletes 'KeyN' from the Dictionary
+
+# For checking if a key is in a dictionary, use 'in' or 'not in'
+# For example:
+print('Key1' in xDict)      # Prints True
+print('abc' not in xDict)   # Prints True
+print('Key3' not in xDict)  # Prints False
 
 # ==============================================================
 # If Statements
