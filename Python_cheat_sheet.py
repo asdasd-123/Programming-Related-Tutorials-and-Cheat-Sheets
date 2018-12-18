@@ -265,6 +265,14 @@ for item in temp_list:
 for item in range(5):
     print('spam')       # This is print 'spam' 5 times
 
+# Enumerate can be used to iterate through values AND indices
+# of a list simultaneously. Useful when convertig lists to Dictionaries
+nums = [55, 44, 33, 22, 11]
+dict = {}
+for v in enumerate(nums):
+    key = v[0]
+    dict[key] = v[1]
+print(dict)
 
 # ==============================================================
 # Functions
