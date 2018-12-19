@@ -2,7 +2,6 @@
 # Text analyser
 # ==============================================================
 from pathlib import Path
-from os import getcwd
 
 filename = Path(__file__).parent / 'Files/Test_file.txt'
 
