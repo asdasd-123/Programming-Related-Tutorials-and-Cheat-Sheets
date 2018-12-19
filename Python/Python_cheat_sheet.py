@@ -358,7 +358,7 @@ def add_five(x):
 # when combined with list() it will return the following list back:
 # 16,27,38,49,60
 result = list(map(add_five, nums))
-result = list(map(lamdbda x: x+5, nums))    # This does the same but in 1 line
+result = list(map(lambda x: x+5, nums))    # This does the same but in 1 line
 
 print(result)   # Prints a list of 16,27,38,49,60
 
@@ -368,6 +368,30 @@ print(result)   # Prints a list of 16,27,38,49,60
 result = list(filter(lambda x: x % 2 == 0, nums))
 
 print(result)   # Would print 22,44
+
+# ==============================================================
+# Generators
+# ==============================================================
+# Generators are a type of iterable, like lists or tuples.
+# Unlike lists, they don't allow indexing with arbitrary indices,
+# but they can still be iterated through with for loops.
+# They can be created using functions and the yield statement.
+# Much more memory efficient than large lists. Can be infinite
+# ==============================================================
+
+
+def countdown():
+    i = 5
+    while i > 0:
+        yield i
+        i -= 1
+
+# Will loop through countdown() until it hits return or the end of function
+for i in countdown():
+    print(i)
+
+# Generators can be used to create a list like the below:
+nums = list(countdown())    # Creates the list [5,4,3,2,1]
 
 # ==============================================================
 # Exception Handling
