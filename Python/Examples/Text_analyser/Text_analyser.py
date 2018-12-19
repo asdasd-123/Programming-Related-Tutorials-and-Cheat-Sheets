@@ -24,6 +24,6 @@ with open(filename) as f:       # Open test text file
 
 text_len = float(len(text))
 
-for char in "tabcdefghijklmnopqrstuvwxyz":
-    total_char = char_count(text, char)
-    print(char + " - " + str(round((total_char / text_len) * 100)) + "%")
+for char in "abcdefghijklmnopqrstuvwxyz":   # Loops through every letter
+    perc = 100 * char_count(text, char) / text_len      # Works out %
+    print("{0} - {1}%".format(char, round(perc, 2)))    # Prints %
