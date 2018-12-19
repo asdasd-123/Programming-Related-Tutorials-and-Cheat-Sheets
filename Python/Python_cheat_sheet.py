@@ -301,6 +301,42 @@ small = count_small(lotto)      # Call our function above and send it
 print(small)                    # Prints the answer to the screen
 
 # ==============================================================
+# Lambda functions
+# ==============================================================
+# Lambda functions aren't as powerful as named functions.
+# They can only do things that require a single expression,
+# usually equivalent to a single line of code.
+#
+# Only really useful for map/filter function. Even then,
+# simpler, more elegant solutions are usually available.
+# ==============================================================
+
+
+# Example named function
+def polynomial(x):
+    return x**2 + 5*x + 4
+print(polynomial(-4))                   # prints out 0 (16-20+4)
+
+# lambda function for same thing.
+print((lambda x: x**2 + 5*x + 4)(-4))   # prints out 0 (16-20+4)
+
+
+# Example below of Map usecase
+def add_five(x):
+    return x + 5
+
+nums = [11, 22, 33, 44, 55]
+result = list(map(add_five, nums))  # returns a list of 16,27,38,49,60
+print(result)
+
+# example of shorter map use with lambda instead (no need to define add_five)
+result = list(map(lambda x: x+5, nums))
+
+# although with this example, it would be much better to just use this
+result = [x + 5 for x in nums]
+
+
+# ==============================================================
 # Exception Handling
 # ==============================================================
 # If your trying to track down a bug, you can use try/except/finally.
