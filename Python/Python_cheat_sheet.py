@@ -345,20 +345,20 @@ result = [x + 5 for x in nums]
 # Must also use list() to convert the output.
 # ==============================================================
 # This is the list we'll be iterating through in the examples below
-nums = [11, 22, 33, 44, 55]
+nums2 = [11, 22, 33, 44, 55]
 
 
 # Map Example :
 # Setup a function. This one adds 5 to whatever it's sent
-def add_five(x):
+def add_five2(x):
     return x + 5
 
 # The code below will go through every item in nums and run
 # the add 5 function on it.
 # when combined with list() it will return the following list back:
 # 16,27,38,49,60
-result = list(map(add_five, nums))
-result = list(map(lambda x: x+5, nums))    # This does the same but in 1 line
+result = list(map(add_five2, nums2))
+result = list(map(lambda x: x+5, nums2))    # This does the same but in 1 line
 
 print(result)   # Prints a list of 16,27,38,49,60
 
