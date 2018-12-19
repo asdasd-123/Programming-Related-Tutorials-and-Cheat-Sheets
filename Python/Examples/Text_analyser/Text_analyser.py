@@ -14,7 +14,7 @@ def char_count(text, char):
     """
     count = 0               # Start count at 0
     for v in text:          # loop through each character item in the text
-        if v.upper() == char.upper():       # If character matches the one we're searching for
+        if v.upper() == char.upper():       # Check char against input
             count += 1      # Increase count by 1
     return count            # Return the final count after finishing the loop
 

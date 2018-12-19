@@ -4,6 +4,10 @@ Learn git
 30 min tutorial covering setting up of account.
 https://tutorialzine.com/2016/06/learn-git-in-30-minutes
 
+download VSCode Gitignore template from :
+https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
+
+then run 
 =============================================
 Git Cheat Sheet
 =============================================
