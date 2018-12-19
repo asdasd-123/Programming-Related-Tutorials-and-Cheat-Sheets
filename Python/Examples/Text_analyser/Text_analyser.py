@@ -22,5 +22,8 @@ def char_count(text, char):
 with open(filename) as f:       # Open test text file
     text = f.read()             # save contents of file to "text"
 
+text_len = float(len(text))
+
 for char in "abcdefghijklmnopqrstuvwxyz":
-    print(char + " - " + str(round((char_count(text, char) / float(len(text))) * 100)) + "%")
+    total_char = char_count(text, char)
+    print(char + " - " + str(round((total_char / text_len) * 100)) + "%")
