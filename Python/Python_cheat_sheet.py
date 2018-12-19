@@ -321,7 +321,7 @@ print(polynomial(-4))                   # prints out 0 (16-20+4)
 print((lambda x: x**2 + 5*x + 4)(-4))   # prints out 0 (16-20+4)
 
 
-# Example below of Map usecase
+# Example below of Map usecase (Max explanation in next section)
 def add_five(x):
     return x + 5
 
@@ -329,11 +329,35 @@ nums = [11, 22, 33, 44, 55]
 result = list(map(add_five, nums))  # returns a list of 16,27,38,49,60
 print(result)
 
-# example of shorter map use with lambda instead (no need to define add_five)
+# Example of shorter map use with lambda instead (no need to define add_five)
 result = list(map(lambda x: x+5, nums))
 
-# although with this example, it would be much better to just use this
+# Although with this example, it would be much better to just use this
 result = [x + 5 for x in nums]
+
+# ==============================================================
+# Map / Filter
+# ==============================================================
+# Used to apply a function to every item in a list.
+# Must use list() to convert output from map object to list though.
+# ==============================================================
+
+
+# Map Example :
+# Setup a function. This one adds 5 to whatever it's sent
+def add_five(x):
+    return x + 5
+
+# This is the list we'll be iterating through
+nums = [11, 22, 33, 44, 55]
+
+# The code below will go through every item in nums and run
+# the add 5 function on it.
+# when combined with list() it will return the following list back:
+# 16,27,38,49,60
+result = list(map(add_five, nums))  
+
+print(result)   # prints a list of 16,27,38,49,60
 
 
 # ==============================================================
