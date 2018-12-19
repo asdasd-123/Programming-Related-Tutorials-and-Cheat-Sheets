@@ -338,9 +338,14 @@ result = [x + 5 for x in nums]
 # ==============================================================
 # Map / Filter
 # ==============================================================
-# Used to apply a function to every item in a list.
+# Map: Used to apply a function to every item in a list.
 # Must use list() to convert output from map object to list though.
+#
+# Filter: Used to apply a filter to a list.
+# Must also use list() to convert the output.
 # ==============================================================
+# This is the list we'll be iterating through in the examples below
+nums = [11, 22, 33, 44, 55]
 
 
 # Map Example :
@@ -348,17 +353,21 @@ result = [x + 5 for x in nums]
 def add_five(x):
     return x + 5
 
-# This is the list we'll be iterating through
-nums = [11, 22, 33, 44, 55]
-
 # The code below will go through every item in nums and run
 # the add 5 function on it.
 # when combined with list() it will return the following list back:
 # 16,27,38,49,60
-result = list(map(add_five, nums))  
+result = list(map(add_five, nums))
+result = list(map(lamdbda x: x+5, nums))    # This does the same but in 1 line
 
-print(result)   # prints a list of 16,27,38,49,60
+print(result)   # Prints a list of 16,27,38,49,60
 
+
+# Filter Example:
+# The code below will loop through nums and only select items that are even
+result = list(filter(lambda x: x % 2 == 0, nums))
+
+print(result)   # Would print 22,44
 
 # ==============================================================
 # Exception Handling
