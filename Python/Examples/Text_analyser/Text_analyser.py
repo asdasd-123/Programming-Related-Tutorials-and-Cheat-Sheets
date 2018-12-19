@@ -3,10 +3,6 @@
 # ==============================================================
 from pathlib import Path
 from os import getcwd
-<<<<<<< HEAD
-=======
-print(getcwd())
->>>>>>> e5bcf17b1edd6591d8c773eb38c36fd3984c0729
 
 filename = Path(getcwd() + "/Files/Test_file.txt")
 
@@ -25,15 +21,6 @@ def char_count(text, char):
 
 with open(filename) as f:       # Open test text file
     text = f.read()             # save contents of file to "text"
-<<<<<<< HEAD
-
-for char in "abcdefghijklmnopqrstuvwxyz":
-    print(len(text))
-    print(char_count(text, char))
-
-input('End')
-=======
 
 for char in "abcdefghijklmnopqrstuvwxyz":
     print(char + " - " + str(round((char_count(text, char) / float(len(text))) * 100)) + "%")
->>>>>>> e5bcf17b1edd6591d8c773eb38c36fd3984c0729
