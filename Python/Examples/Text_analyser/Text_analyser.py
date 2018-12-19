@@ -1,10 +1,10 @@
 # ==============================================================
 # Text analyser
 # ==============================================================
-# from pathlib import Path
+from pathlib import Path
 from os import getcwd
 print(getcwd())
-'''
+
 filename = Path(getcwd() + "/Files/Test_file.txt")
 
 
@@ -15,17 +15,13 @@ def char_count(text, char):
     """
     count = 0               # Start count at 0
     for v in text:          # loop through each character item in the text
-        if v == char:       # If character matches the one we're searching for
+        if v.upper() == char.upper():       # If character matches the one we're searching for
             count += 1      # Increase count by 1
     return count            # Return the final count after finishing the loop
 
-try:
-    with open(filename) as f:       # Open test text file
-        text = f.read()             # save contents of file to "text"
 
-    for char in "abcdefghijklmnopqrstuvwxyz":
-        print(str((char_count(text, char) / len(text)) * 100) + "%")
+with open(filename) as f:       # Open test text file
+    text = f.read()             # save contents of file to "text"
 
-    input('End')
-except:
-'''
+for char in "abcdefghijklmnopqrstuvwxyz":
+    print(char + " - " + str(round((char_count(text, char) / float(len(text))) * 100)) + "%")
