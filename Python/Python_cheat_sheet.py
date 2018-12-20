@@ -402,6 +402,7 @@ nums = list(countdown())    # Creates the list [5,4,3,2,1]
 # ==============================================================
 
 
+# Example 1
 def decor(func):            # Define the add-on function
     def wrap(x):        # define sub-function which will contain the decoration
         print("============")
@@ -410,7 +411,6 @@ def decor(func):            # Define the add-on function
     return wrap
 
 
-# Example 1
 def print_text(name):           # Define original function
     print("Hello:", name)
 
@@ -423,7 +423,15 @@ decorated("Williams")           # Now it runs the first then second function
 
 
 # Example 2
-@decor                          # with the @ symbol you can decorate it
+def decor2(func):               # Define the add-on function
+    def wrap():        # define sub-function which will contain the decoration
+        print("============")
+        func()             # The function we will be parsing it (print_text)
+        print("============")
+    return wrap
+
+
+@decor2                         # with the @ symbol you can decorate it
 def print_text2():              # automatically but you lose ability to
     print("Hello world!")       # call it without the decorator.
 
@@ -443,7 +451,7 @@ print_text2()
 # ==============================================================
 
 try:                                # Will try the code block below
-    y = 5 / 0                       # This bit failes (divide by zero)
+    y = 5 / 2               # If this was zero, it would fail (divice by zero)
 except ZeroDivisionError:           # If error found above, run this code block
     print("there was an error!")
     raise                           # displays the original error
@@ -467,5 +475,21 @@ assert 5 == (2 + 3)     # The code will carry on running because this is True
 # assert 5 == 1           This would raise an error becuase it returns False
 assert 5 == 5, "If the assertain fails, this text is displayed"
 
+# ==============================================================
+# Recursion
+# ==============================================================
+# A function can be called from within itself. This leads to recursion
+# ==============================================================
+# The example below shows how to work out 6! (6 factorial)
+# i.e 6 * 5 * 4 * 3 * 2 * 1         (720)
+
+
+def factorial(x):
+    if x == 1:              # This is needed to stop it from recurring forever
+        return 1
+    else:
+        return x * factorial(x-1)       # calls itself. 
+
+print(factorial(6))     # prints 720
 
 input("Question here")      # console input
