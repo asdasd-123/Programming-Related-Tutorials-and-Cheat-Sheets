@@ -479,6 +479,7 @@ assert 5 == 5, "If the assertain fails, this text is displayed"
 # Recursion
 # ==============================================================
 # A function can be called from within itself. This leads to recursion
+# They require a "Base Case". A way for the function to eventually end.
 # ==============================================================
 # The example below shows how to work out 6! (6 factorial)
 # i.e 6 * 5 * 4 * 3 * 2 * 1         (720)
@@ -486,9 +487,9 @@ assert 5 == 5, "If the assertain fails, this text is displayed"
 
 def factorial(x):
     if x == 1:              # This is needed to stop it from recurring forever
-        return 1
+        return 1            # Called the "Base Case"
     else:
-        return x * factorial(x-1)       # calls itself. 
+        return x * factorial(x-1)       # calls itself.
 
 print(factorial(6))     # prints 720
 
