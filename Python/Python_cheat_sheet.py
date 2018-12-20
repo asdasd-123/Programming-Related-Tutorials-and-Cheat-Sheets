@@ -398,6 +398,7 @@ nums = list(countdown())    # Creates the list [5,4,3,2,1]
 # Allows creation of "add-on" functions and rename them.
 # Allows you to create variations of a single function without copying
 # 80% of the code.
+# More examples of multiple decorators in Decorator_functions.py example file
 # ==============================================================
 
 
