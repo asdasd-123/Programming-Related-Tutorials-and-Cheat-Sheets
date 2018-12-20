@@ -401,10 +401,6 @@ nums = list(countdown())    # Creates the list [5,4,3,2,1]
 # ==============================================================
 
 
-def print_text(name):           # Define original function
-    print("Hello:", name)
-
-
 def decor(func):            # Define the add-on function
     def wrap(x):        # define sub-function which will contain the decoration
         print("============")
@@ -413,8 +409,28 @@ def decor(func):            # Define the add-on function
     return wrap
 
 
+# Example 1
+def print_text(name):           # Define original function
+    print("Hello:", name)
+
 decorated = decor(print_text)   # Rename the function combination
 decorated("Williams")           # Now it runs the first then second function
+# prints the following:
+# ============
+# Hello: Williams
+# ============
+
+
+# Example 2
+@decor                          # with the @ symbol you can decorate it
+def print_text2():              # automatically but you lose ability to
+    print("Hello world!")       # call it without the decorator.
+
+print_text2()
+# prints the following:
+# ============
+# Hellow World!
+# ============
 
 # ==============================================================
 # Exception Handling
