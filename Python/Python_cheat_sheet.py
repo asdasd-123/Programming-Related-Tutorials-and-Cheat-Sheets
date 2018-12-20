@@ -394,6 +394,29 @@ for i in countdown():
 nums = list(countdown())    # Creates the list [5,4,3,2,1]
 
 # ==============================================================
+# Decorator functions
+# Allows creation of "add-on" functions and rename them.
+# Allows you to create variations of a single function without copying
+# 80% of the code.
+# ==============================================================
+
+
+def print_text(name):           # Define original function
+    print("Hello:", name)
+
+
+def decor(func):            # Define the add-on function
+    def wrap(x):        # define sub-function which will contain the decoration
+        print("============")
+        func(x)             # The function we will be parsing it (print_text)
+        print("============")
+    return wrap
+
+
+decorated = decor(print_text)   # Rename the function combination
+decorated("Williams")           # Now it runs the first then second function
+
+# ==============================================================
 # Exception Handling
 # ==============================================================
 # If your trying to track down a bug, you can use try/except/finally.
