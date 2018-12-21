@@ -1,6 +1,8 @@
 """
 ==============================================================
 Text analyser
+The code below opens up a text file and works out which %
+of the overall text is which letter
 ==============================================================
 """
 from pathlib import Path
