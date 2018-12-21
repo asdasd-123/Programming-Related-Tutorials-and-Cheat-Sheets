@@ -195,7 +195,10 @@ print(xDict.get('key6', "not found"))    # Prints 'not found'
 # ==============================================================
 # Sets
 # ==============================================================
-#
+# Sets are similar to lists except they:
+# - Only contain unique entries
+# - Are not indexed
+# - Iterating through them will happen in an unpredictable order
 # ==============================================================
 
 
