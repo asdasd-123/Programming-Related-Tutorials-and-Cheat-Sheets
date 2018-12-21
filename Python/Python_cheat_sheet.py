@@ -526,6 +526,7 @@ assert 5 == 5, "If the assertain fails, this text is displayed"
 # ==============================================================
 # A function can be called from within itself. This leads to recursion
 # They require a "Base Case". A way for the function to eventually end.
+# More examples in the "itertools.py" example file
 # ==============================================================
 # The example below shows how to work out 6! (6 factorial)
 # i.e 6 * 5 * 4 * 3 * 2 * 1         (720)
