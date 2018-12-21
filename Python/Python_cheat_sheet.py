@@ -196,11 +196,41 @@ print(xDict.get('key6', "not found"))    # Prints 'not found'
 # Sets
 # ==============================================================
 # Sets are similar to lists except they:
-# - Only contain unique entries
+# - Only contain unique entries (duplicate items ignored)
 # - Are not indexed
 # - Iterating through them will happen in an unpredictable order
+# - Use less memory
+# - Faster to check if items are in it than lists
 # ==============================================================
+# Can be created the two ways below
+set1 = {1, 2, 3, 4}
+set2 = set()        # Cant use just {} as thats how dictionaries are made
+set3 = {1, 2, 3, 3, 2, 1, 2, 3}     # Would just produce {1, 2, 3}
+# Can use 'in' / 'not in' to check if items are in it
+print(4 in set1)        # Prints True
+print(3 not in set1)    # Prints False
 
+# Can still use len() the same way as lists though
+print(len(set1))        # Prints 4
+print(len(set3))        # Prints 3 (no duplicates)
+
+# But use 'add()' instead of 'append' to add items.
+set1.add(5)
+
+# And remove an item using remove()
+# But using pop() will remove a random item since the list is unordered
+set1.remove(5)
+
+# Multiple sets can be combined in different ways. Shown below.
+first = {1, 2, 3, 4, 5, 6}
+second = {4, 5, 6, 7, 8, 9}
+
+print(first | second)   # Union- Combine Sets - {1, 2, 3, 4, 5, 6, 7, 8, 9}
+print(first & second)   # Intersection- Only get items from both - {4, 5, 6}
+print(first - second)   # Difference- Items in first but not second - {1, 2, 3}
+print(second - first)   # Difference- Items in second but not first - {8, 9, 7}
+print(first ^ second)   # symmetric difference- Items in either set but
+#                         not both - {1, 2, 3, 7, 8, 9}
 
 # ==============================================================
 # If Statements
