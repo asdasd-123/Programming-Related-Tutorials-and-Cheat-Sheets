@@ -17,6 +17,12 @@ x = "10"                        # String
 xlist = [2, '1', 2.2]           # List
 xDict = {'key1': 1, 'Key2': 2}  # Dictionary
 
+# Different Array types (all explained better below)
+# list: [v], mutable, indexed
+# tuple: (v), immutable, indexed
+# dic: {k:v}, mutable, key:value pairs, no index
+# set: {v}, mutable, unique elements, no index
+
 # ==============================================================
 #  Type Conversion
 # ==============================================================
