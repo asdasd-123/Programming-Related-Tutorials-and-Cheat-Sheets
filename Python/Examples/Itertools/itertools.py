@@ -13,6 +13,9 @@ One type of function it produces is infinite iterators.
   remains true;
 - Chain - combines several iterables into one long one; 
 - Accumulate - returns a running total of values in an iterable.
+- Product - returns all combinations of two/more lists.
+  Optional parameter "repeat=2" for example to use one list and treat it
+  the same as two identical lists.
 ==============================================================
 """
 from itertools import count, repeat, cycle     # needs importing first
