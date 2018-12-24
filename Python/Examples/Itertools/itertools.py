@@ -10,8 +10,8 @@ One type of function it produces is infinite iterators.
 - The function "repeat" repeats an object, either infinitely or
   a specific number of times.
 - Takewhile - takes items from an iterable while a predicate function
-  remains true;
-- Chain - combines several iterables into one long one; 
+  remains true.
+- Chain - combines several iterables into one long one.
 - Accumulate - returns a running total of values in an iterable.
 - Product - returns all combinations of two/more lists.
   Optional parameter "repeat=2" for example to use one list and treat it
@@ -52,7 +52,7 @@ for i in count(40, -8):
 # ==============================================================
 
 # Example 1 : Repeat(x,y)
-print(list(repeat("Spam",10)))
+print(list(repeat("Spam", 10)))
 # Prints a list of "Spam", 10 times
 
 # ==============================================================
@@ -87,7 +87,8 @@ nums = list(accumulate(range(8)))
 # the rule is broken.
 nums = [0, 2, 4, 6, 8, 10, 2, 3, 4, 5]
 print(list(takewhile(lambda x: x <= 6, nums)))
-# prints out 0,2,4,6 (ignores the items at the end because the rule failed on '8')
+# prints out 0,2,4,6 (ignores the items at the end because the rule
+# failed on '8')
 
 # ==============================================================
 # chain()
