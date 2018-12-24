@@ -95,3 +95,11 @@ print(list(takewhile(lambda x: x <= 6, nums)))
 # Example 1 : Using chain to join two lists
 list(chain([1, 3, 2], [3, 5, 9]))
 # produces a single list of 1,3,2,3,5,9
+
+# ==============================================================
+# product()
+# ==============================================================
+
+product('ABCD', 'xy')               # Ax Ay Bx By Cx Cy Dx Dy
+print(list(product(range(2), repeat=3)))  # 000 001 010 011 100 101 110 111
+print(list(product(range(2), repeat=2)))  # 00 01 11 10
