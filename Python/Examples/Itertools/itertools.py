@@ -4,14 +4,22 @@ Itertools
 The module itertools is a standard library that contains several functions
 that are useful in functional programming.
 One type of function it produces is infinite iterators.
-The function count counts up infinitely from a value.
-The function cycle infinitely iterates through an iterable
-(for instance a list or string).
-The function repeat repeats an object, either infinitely or
-a specific number of times.
+- The function "count" counts up infinitely from a value.
+- The function "cycle" infinitely iterates through an iterable
+  (for instance a list or string).
+- The function "repeat" repeats an object, either infinitely or
+  a specific number of times.
+- Takewhile - takes items from an iterable while a predicate function remains true;
+- Chain - combines several iterables into one long one; 
+- Accumulate - returns a running total of values in an iterable.
 ==============================================================
 """
-from itertools import count     # needs importing first
+from itertools import count,repeat,cycle     # needs importing first
+from itertools import takewhile, accumulate, chain
+
+# ==============================================================
+# Count()
+# ==============================================================
 
 # Example 1 : Count(x) - Iterates up infinitely from x
 for i in count(3):      # Will count up from 3 (inclusive)
@@ -33,3 +41,52 @@ for i in count(40, -8):
     if i <= 12:
         break
 # Prints 40,32,24,16,8
+
+# ==============================================================
+# repeat()
+# ==============================================================
+
+# Example 1 : Repeat(x,y)
+print(list(repeat("Spam",10)))
+# Prints a list of "Spam", 10 times
+
+# ==============================================================
+# cycle()
+# ==============================================================
+
+# Example 1 : Difference between cycle and normal for loop
+# For loop:
+for i in "Spam":
+    print(i)
+# Prints S,p,a,m
+
+for i in cycle("Spam"):
+    print(i)
+# Prints S,p,a,m,S,p,a,m,S,p,a,m.....
+
+# ==============================================================
+# accumulate()
+# ==============================================================
+
+# Example 1 : Make a list using accumulate and range
+nums = list(accumulate(range(8)))
+# Produces list 0,1,3,6,10,16,21,28
+# (0),(0 + 1), (0 + 1 + 2) etc
+
+# ==============================================================
+# takewhile()
+# ==============================================================
+
+# Example 1 : Using Lambda + takewhile to return items in list until
+# the rule is broken.
+nums = [0,2,4,6,8,10,2,3,4,5]
+print(list(takewhile(lambda x: x <= 6, nums)))
+# prints out 0,2,4,6 (ignores the items at the end because the rule failed on '8')
+
+# ==============================================================
+# chain()
+# ==============================================================
+
+# Example 1 : Using chain to join two lists
+list(chain([1,3,2], [3,5,9]))
+# produces a single list of 1,3,2,3,5,9
