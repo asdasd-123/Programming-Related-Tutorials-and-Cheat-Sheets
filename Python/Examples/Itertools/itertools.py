@@ -9,13 +9,15 @@ One type of function it produces is infinite iterators.
   (for instance a list or string).
 - The function "repeat" repeats an object, either infinitely or
   a specific number of times.
-- Takewhile - takes items from an iterable while a predicate function remains true;
+- Takewhile - takes items from an iterable while a predicate function
+  remains true;
 - Chain - combines several iterables into one long one; 
 - Accumulate - returns a running total of values in an iterable.
 ==============================================================
 """
-from itertools import count,repeat,cycle     # needs importing first
+from itertools import count, repeat, cycle     # needs importing first
 from itertools import takewhile, accumulate, chain
+from itertools import product, permutations
 
 # ==============================================================
 # Count()
