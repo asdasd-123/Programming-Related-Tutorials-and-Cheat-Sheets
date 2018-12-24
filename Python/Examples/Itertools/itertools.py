@@ -81,7 +81,7 @@ nums = list(accumulate(range(8)))
 
 # Example 1 : Using Lambda + takewhile to return items in list until
 # the rule is broken.
-nums = [0,2,4,6,8,10,2,3,4,5]
+nums = [0, 2, 4, 6, 8, 10, 2, 3, 4, 5]
 print(list(takewhile(lambda x: x <= 6, nums)))
 # prints out 0,2,4,6 (ignores the items at the end because the rule failed on '8')
 
@@ -90,5 +90,5 @@ print(list(takewhile(lambda x: x <= 6, nums)))
 # ==============================================================
 
 # Example 1 : Using chain to join two lists
-list(chain([1,3,2], [3,5,9]))
+list(chain([1, 3, 2], [3, 5, 9]))
 # produces a single list of 1,3,2,3,5,9
