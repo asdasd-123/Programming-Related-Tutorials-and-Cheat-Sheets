@@ -65,8 +65,9 @@ for i in "Spam":
     print(i)
 # Prints S,p,a,m
 
-for i in cycle("Spam"):
-    print(i)
+# commented the below as it's an infinite loop
+# for i in cycle("Spam"):
+#     print(i)
 # Prints S,p,a,m,S,p,a,m,S,p,a,m.....
 
 # ==============================================================
