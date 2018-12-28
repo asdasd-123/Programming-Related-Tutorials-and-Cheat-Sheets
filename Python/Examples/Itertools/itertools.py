@@ -16,6 +16,7 @@ One type of function it produces is infinite iterators.
 - Product - returns all combinations of two/more lists.
   Optional parameter "repeat=2" for example to use one list and treat it
   the same as two identical lists.
+- Permutations - returns all possible combinations from a single list
 ==============================================================
 """
 from itertools import count, repeat, cycle     # needs importing first
@@ -102,6 +103,15 @@ list(chain([1, 3, 2], [3, 5, 9]))
 # product()
 # ==============================================================
 
+# With product, [1,2] is treated the same as [2,1]
 product('ABCD', 'xy')               # Ax Ay Bx By Cx Cy Dx Dy
 print(list(product(range(2), repeat=3)))  # 000 001 010 011 100 101 110 111
 print(list(product(range(2), repeat=2)))  # 00 01 11 10
+
+# ==============================================================
+# permutations()
+# ==============================================================
+
+# Not that "a,b,c" is treated differently than "c,b,a" etc
+print(list(permutations('abc')))
+# "a,b,c" "a,c,b" "b,a,c" "b,c,a" "c,a,b" "c,b,a"
