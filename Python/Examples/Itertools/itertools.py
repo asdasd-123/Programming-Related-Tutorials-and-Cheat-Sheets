@@ -19,7 +19,7 @@ One type of function it produces is infinite iterators.
 - Permutations - returns all possible combinations from a single list
 ==============================================================
 """
-from itertools import count, repeat, cycle     # needs importing first
+from itertools import count, repeat     # needs importing first
 from itertools import takewhile, accumulate, chain
 from itertools import product, permutations
 

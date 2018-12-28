@@ -361,6 +361,8 @@ print(small)                    # Prints the answer to the screen
 # Example named function
 def polynomial(x):
     return x**2 + 5*x + 4
+
+
 print(polynomial(-4))                   # prints out 0 (16-20+4)
 
 # lambda function for same thing.
@@ -370,6 +372,7 @@ print((lambda x: x**2 + 5*x + 4)(-4))   # prints out 0 (16-20+4)
 # Example below of Map usecase (Max explanation in next section)
 def add_five(x):
     return x + 5
+
 
 nums = [11, 22, 33, 44, 55]
 result = list(map(add_five, nums))  # returns a list of 16,27,38,49,60
@@ -398,6 +401,7 @@ nums2 = [11, 22, 33, 44, 55]
 # Setup a function. This one adds 5 to whatever it's sent
 def add_five2(x):
     return x + 5
+
 
 # The code below will go through every item in nums and run
 # the add 5 function on it.
@@ -432,6 +436,7 @@ def countdown():
         yield i
         i -= 1
 
+
 # Will loop through countdown() until it hits return or the end of function
 for i in countdown():
     print(i)
@@ -460,6 +465,7 @@ def decor(func):            # Define the add-on function
 def print_text(name):           # Define original function
     print("Hello:", name)
 
+
 decorated = decor(print_text)   # Rename the function combination
 decorated("Williams")           # Now it runs the first then second function
 # prints the following:
@@ -480,6 +486,7 @@ def decor2(func):               # Define the add-on function
 @decor2                         # with the @ symbol you can decorate it
 def print_text2():              # automatically but you lose ability to
     print("Hello world!")       # call it without the decorator.
+
 
 print_text2()
 # prints the following:
@@ -537,6 +544,7 @@ def factorial(x):
         return 1            # Called the "Base Case"
     else:
         return x * factorial(x-1)       # calls itself.
+
 
 print(factorial(6))     # prints 720
 

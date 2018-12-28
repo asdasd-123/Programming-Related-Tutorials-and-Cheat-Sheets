@@ -20,6 +20,7 @@ class Point:
         self.x = 0
         self.y = 0
 
+
 p = Point()     # Instantiate an object of type Point
 q = Point()     # Make a second point
 print(p.x, p.y, q.x, q.y)   # Prints 0 0 0 0 - because the default values above
@@ -45,6 +46,7 @@ class PointV2:
         """Create a new point at x,y"""
         self.x = x
         self.y = y
+
 
 # Now we can create a point and set it's co-ords in a single line
 p = PointV2(4, 2)
@@ -104,6 +106,7 @@ class PointV4:
         """Compute distance from origin"""
         return ((self.x ** 2) + (self.y ** 2)) ** 0.5
 
+
 p = PointV4(3, 4)
 print(str(p))   # Now prints (3, 4)
 
@@ -134,6 +137,7 @@ class PointV5:
         mx = (self.x + target.x) / 2.
         my = (self.y + target.y) / 2.
         return PointV5(mx, my)
+
 
 # The below finds the halfway point between p and q
 p = PointV5(3, 4)
