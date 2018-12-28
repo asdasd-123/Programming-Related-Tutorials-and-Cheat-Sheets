@@ -106,3 +106,40 @@ class PointV4:
 
 p = PointV4(3, 4)
 print(str(p))   # Now prints (3, 4)
+
+
+# ==========
+# Using instances as return values
+# ==========
+class PointV5:
+    """Point class represents and manipulates x,y coords."""
+
+    def __init__(self, x=0, y=0):
+        """Create a new point at x,y"""
+        self.x = x
+        self.y = y
+
+    # By naming the method this, the str() will know how to convert
+    def __str__(self):
+        """Convert coords to string"""
+        return "({0}, {1})".format(self.x, self.y)
+
+    def d_f_o(self):
+        """Compute distance from origin"""
+        return((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    # In this example, a new point object can be returned
+    def halfway(self, target):
+        """Return the halfway point between itself and the target"""
+        mx = (self.x + target.x) / 2.
+        my = (self.y + target.y) / 2.
+        return PointV5(mx, my)
+
+# The below finds the halfway point between p and q
+p = PointV5(3, 4)
+q = PointV5(13, 8)
+r = q.halfway(p)
+print(str(r))       # Prints (8.0, 6.0)
+
+# The below combines it all into one line.
+print(str(PointV5(3, 4).halfway(PointV5(13, 8))))   # Prints (8.0, 6.0)
