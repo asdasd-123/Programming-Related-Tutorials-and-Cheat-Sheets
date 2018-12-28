@@ -87,7 +87,7 @@ print(p.to_string())    # Prints (3, 4)
 
 
 # ==========
-# Adding hanlders for conversion using str() for example
+# Adding handlers for conversion using str() for example
 # ==========
 class PointV4:
     """Point class represents and manipulates x,y coords."""
