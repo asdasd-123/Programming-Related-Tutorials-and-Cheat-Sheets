@@ -540,4 +540,15 @@ def factorial(x):
 
 print(factorial(6))     # prints 720
 
+# ==============================================================
+# Classes
+# ==============================================================
+# Full in-depth breakdown found here:
+# http://openbookproject.net/thinkcs/python/english3e/classes_and_objects_I.html#classes-and-objects-the-basics
+# Examples that follow along with that link in the "Classes.py"
+# example folder.
+# More breakdown on 'self' variable here:
+# https://pythontips.com/2013/08/07/the-self-variable-in-python-explained/
+# ==============================================================
+
 input("Question here")      # console input
