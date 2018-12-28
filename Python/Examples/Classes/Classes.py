@@ -147,3 +147,20 @@ print(str(r))       # Prints (8.0, 6.0)
 
 # The below combines it all into one line.
 print(str(PointV5(3, 4).halfway(PointV5(13, 8))))   # Prints (8.0, 6.0)
+
+
+# ==========
+# Setting Class attributes
+# ==========
+class Dog:
+    """This is a dog"""
+    legs = 4    # This attribute will be accessible without creating an object
+
+    def __init__(self, name, colour):
+        self.name = name
+        self.colour = colour
+
+
+fido = Dog("Fido", "brown")
+print(fido.legs)    # Prints 4
+print(Dog.legs)     # Prints 4
