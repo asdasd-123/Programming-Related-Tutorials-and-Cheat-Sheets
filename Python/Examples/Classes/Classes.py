@@ -210,3 +210,22 @@ wolf = Wolf("wolf", "grey")
 
 husky.bark()
 wolf.bark()
+
+
+# ==========
+# Inheritance can have multiple levels of inheritance
+# ==========
+class A:        # Class A can use method 1, but not method 2 or method 3
+    def method1(self):
+        print("Method 1")
+
+
+class B(A):     # Class B can use method 1, method 2, but not method 3
+    def method2(self):
+        print("Method 2")
+
+
+class C(B):     # Class C can use method 1, method 2, method 3
+    def method3(self):
+        print("Method 3")
+
