@@ -187,3 +187,26 @@ class Cat(Animal):
 fido = Dog("Fido", "brown")
 print(fido.colour)
 fido.bark()
+
+
+# ==========
+# Inheritance with overriding methods or attributes
+# ==========
+class Wolf:
+    def __init__(self, name, colour):
+        self.name = name
+        self.colour = colour
+
+    def bark(self):
+        print("Grr...")
+
+
+class Dog(Wolf):
+    def bark(self):     # This overrides the 'bark' method in Wolf
+        print("Woof")
+
+husky = Dog("Max", "grey")
+wolf = Wolf("wolf", "grey")
+
+husky.bark()
+wolf.bark()
