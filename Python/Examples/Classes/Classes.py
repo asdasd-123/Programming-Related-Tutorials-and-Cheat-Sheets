@@ -164,3 +164,17 @@ class Dog:
 fido = Dog("Fido", "brown")
 print(fido.legs)    # Prints 4
 print(Dog.legs)     # Prints 4
+
+
+# ==========
+# Inheritance
+# ==========
+class Animal:       # Set up the original master class
+    def __init__(self, name, colour):
+        self.name = name
+        self.colour = colour
+
+
+class dog(Animal):  # By including "animal", it inherits all the animal info
+    def bark(self):
+        print("Woof!")
