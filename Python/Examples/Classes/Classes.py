@@ -229,3 +229,11 @@ class C(B):     # Class C can use method 1, method 2, method 3
     def method3(self):
         print("Method 3")
 
+
+# ==========
+# Using the super function to access a 'super class' method
+# Usful if a current sub-class method has overridden it
+# ==========
+class A:
+    def spam(self):
+        
