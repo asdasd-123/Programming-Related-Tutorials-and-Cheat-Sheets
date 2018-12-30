@@ -229,3 +229,4 @@ class C(B):     # Class C can use method 1, method 2, method 3
     def method3(self):
         print("Method 3")
 
+print("test")
