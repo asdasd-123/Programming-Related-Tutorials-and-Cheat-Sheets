@@ -237,3 +237,4 @@ class C(B):     # Class C can use method 1, method 2, method 3
 class A:
     def spam(self):
         
+print("test")
