@@ -169,12 +169,21 @@ print(Dog.legs)     # Prints 4
 # ==========
 # Inheritance
 # ==========
-class Animal:       # Set up the original master class
+class Animal:       # Set up the original 'super class'
     def __init__(self, name, colour):
         self.name = name
         self.colour = colour
 
 
-class dog(Animal):  # By including "animal", it inherits all the animal info
-    def bark(self):
+class Dog(Animal):      # By including "animal", it inherits all the
+    def bark(self):     # animal info. This is a 'sub class'
         print("Woof!")
+
+
+class Cat(Animal):
+    def purr(self):
+        print("Purr...")
+
+fido = Dog("Fido", "brown")
+print(fido.colour)
+fido.bark()
