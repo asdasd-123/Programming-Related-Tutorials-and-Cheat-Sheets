@@ -184,6 +184,7 @@ class Cat(Animal):
     def purr(self):
         print("Purr...")
 
+
 fido = Dog("Fido", "brown")
 print(fido.colour)
 fido.bark()
@@ -204,6 +205,7 @@ class Wolf:
 class Dog(Wolf):
     def bark(self):     # This overrides the 'bark' method in Wolf
         print("Woof")
+
 
 husky = Dog("Max", "grey")
 wolf = Wolf("wolf", "grey")
@@ -236,5 +238,4 @@ class C(B):     # Class C can use method 1, method 2, method 3
 # ==========
 class A:
     def spam(self):
-        
-print("test")
+        print("Spam! - class A")
