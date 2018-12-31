@@ -239,3 +239,15 @@ class C(B):     # Class C can use method 1, method 2, method 3
 class A:
     def spam(self):
         print("Spam! - class A")
+
+
+class B(A):
+    def spam(self):
+        print("Spam! - class B")
+        super().spam()
+
+
+B().spam()
+# Prints the following:
+# Spam! - class B
+# Spam! - class A
