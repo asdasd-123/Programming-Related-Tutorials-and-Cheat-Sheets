@@ -251,3 +251,33 @@ B().spam()
 # Prints the following:
 # Spam! - class B
 # Spam! - class A
+
+
+# ==========
+# Using the super function when creating a sub class that
+# takes extra arguments
+# ==========
+class Human:
+    def __init__(self, name, size):
+        self.name = name
+        self.size = size
+
+    def present(self):
+        print("{0}: {1}cm".format(self.name, self.size))
+
+
+class Worker(Human):
+    def __init__(self, name, size, job):
+        super().__init__(name, size)
+        self.job = job
+
+    def present(self):
+        super().present()
+        print(self.job)
+
+
+w = Worker("Bob", 195, "trader")
+w.present()
+# Prints the following:
+# Bob: 195cm
+# trader
