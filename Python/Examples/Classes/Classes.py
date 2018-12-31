@@ -244,7 +244,7 @@ class A:
 class B(A):
     def spam(self):
         print("Spam! - class B")
-        super().spam()
+        super().spam()  # this runs the "spam" method from the super class
 
 
 B().spam()
