@@ -8,9 +8,10 @@ For example, how to handle when two objects get added together
 ==============================================================
 """
 
-
+# ==========
 # One use of dunders is for "operator overloading".
 # This allows us to use operators (+ and - etc) on the objects
+# ==========
 # For example, the __add__ dunder below allows us to add two vectors
 # and return a third:
 class Vector:
