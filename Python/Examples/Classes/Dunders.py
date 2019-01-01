@@ -45,6 +45,14 @@ print(str(vector_c))
 # __xor__ for ^
 # __or__ for |
 
+# There are also magic-methods for comparisons.
+# __lt__ for <
+# __le__ for <=
+# __eq__ for ==
+# __ne__ for !=
+# __gt__ for >
+# __ge__ for >=
+
 
 # ==========
 # 'r' methods
