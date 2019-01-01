@@ -49,7 +49,7 @@ print(str(vector_c))
 # __lt__ for <
 # __le__ for <=
 # __eq__ for ==
-# __ne__ for !=
+# __ne__ for !=     # The 'r' method for this is __eq__
 # __gt__ for >
 # __ge__ for >=
 
