@@ -548,6 +548,7 @@ def factorial(x):
 
 print(factorial(6))     # prints 720
 
+
 # ==============================================================
 # Classes
 # ==============================================================
@@ -558,5 +559,22 @@ print(factorial(6))     # prints 720
 # More breakdown on 'self' variable here:
 # https://pythontips.com/2013/08/07/the-self-variable-in-python-explained/
 # ==============================================================
+# Example class setup below
+class PointV3:
+    """Point class represents and manipulates x,y coords."""
+
+    def __init__(self, x=0, y=0):
+        """Create a new point at x,y"""
+        self.x = x
+        self.y = y
+
+    def d_f_o(self):
+        """Compute distance from origin"""
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+
+p = PointV3(3, 4)
+print("(x={0}, y={1}) Distance from origin is {2}".format(p.x, p.y, p.d_f_o()))
+# Prints (x=3, y=4) Distance from origin is 5.0
 
 input("Question here")      # console input
