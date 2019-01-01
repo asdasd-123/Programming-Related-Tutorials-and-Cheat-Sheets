@@ -33,7 +33,7 @@ vector_b = Vector(2, 8)
 vector_c = vector_a + vector_b  # becomes a vector with x=6 and y=13
 print(str(vector_c))
 
-# A list of common dunders is below:
+# A list of common operator dunders is below:
 # __sub__ for -
 # __sub__ for -
 # __mul__ for *
