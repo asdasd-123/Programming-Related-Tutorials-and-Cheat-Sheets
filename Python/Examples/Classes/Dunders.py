@@ -44,3 +44,30 @@ print(str(vector_c))
 # __and__ for &
 # __xor__ for ^
 # __or__ for |
+
+
+# ==========
+# 'r' methods
+# These are used if a dunder cannot be found when checked.
+# ==========
+# i.e if object 'A' doesn't have a __add__ method, but object 'B' does has a
+# __radd__ method.
+# When we try A + B, it will search for A().__add__(B) but it wont be found.
+# At this stage it will try and find B().__radd__(A) instead, which will work.
+class NumberA:
+    def __init__(self, x):
+        self.x = x
+
+
+class NumberB:
+    def __init__(self, x):
+        self.x = x
+
+    def __radd__(self, other):  # If this was just __add__ it would't work.
+        return NumberB(self.x + other.x)
+
+
+a = NumberA(4)
+b = NumberB(7)
+c = a + b
+print(c.x)  # prints out 11. It essentially calls B(7).__radd__(4)
