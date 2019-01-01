@@ -52,8 +52,9 @@ print(str(vector_c))
 # ==========
 # i.e if object 'A' doesn't have a __add__ method, but object 'B' does has a
 # __radd__ method.
-# When we try A + B, it will search for A().__add__(B) but it wont be found.
-# At this stage it will try and find B().__radd__(A) instead, which will work.
+# When we try A + B, it will search for A().__add__(B()) but it wont be found.
+# At this stage it will try and find B().__radd__(A()) instead,
+# which will work.
 class NumberA:
     def __init__(self, x):
         self.x = x
@@ -70,4 +71,4 @@ class NumberB:
 a = NumberA(4)
 b = NumberB(7)
 c = a + b
-print(c.x)  # prints out 11. It essentially calls B(7).__radd__(4)
+print(c.x)  # prints out 11. It essentially calls B(7).__radd__(A(4())
