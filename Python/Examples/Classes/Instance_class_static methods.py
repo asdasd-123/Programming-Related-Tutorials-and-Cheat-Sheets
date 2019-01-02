@@ -56,7 +56,7 @@ obj = MyClass()
 
 # Instance method
 x = obj.mymethod()
-print(x)   
+print(x)
 # Prints ('Instance method called', <__main__.MyClass object at 0x035F4690>)
 # This also works the same as passing the object manually to a class as below:
 x = MyClass.mymethod(obj)
@@ -96,3 +96,18 @@ x = MyClass.mystaticmethod()
 print(x)
 # Prints Static method called
 # This works since it doesn't require the 'self' argument.
+
+
+# ==========
+# More real-use examples
+# ==========
+class Pizza:
+    def __init__(self, ingredients):
+        self.ingredients = ingredients
+
+    def __repr__(self):
+        return f'Pizza({self.ingredients!r}'
+        # Pizza(['cheese', 'tomatoes']
+
+
+print(Pizza(['cheese', 'tomatoes']))
