@@ -71,3 +71,28 @@ print(x)
 x = obj.mystaticmethod()
 print(x)
 # Prints Static method called
+
+
+# ==========
+# Examples of calling them directly on the class
+# ==========
+
+# Instance method
+# x = MyClass.mymethod()
+# print(x)
+# This will fail with a TypeError. Python tried to populate the 'self'
+# argument and failed since we haven't created the object.
+
+
+# Class method
+x = MyClass.myclassmethod()
+print(x)
+# Prints ('Class method called', <class '__main__.MyClass'>)
+# This works since it doesn't require the 'self' argument and instead
+# calls direcly on the class itself.
+
+# Static method
+x = MyClass.mystaticmethod()
+print(x)
+# Prints Static method called
+# This works since it doesn't require the 'self' argument.
