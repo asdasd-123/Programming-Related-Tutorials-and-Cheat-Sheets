@@ -45,6 +45,8 @@ print(str(vector_c))
 # __xor__ for ^
 # __or__ for |
 
+# __repr__ for string representation of the object. i.e print(Object)
+
 # There are also magic-methods for comparisons.
 # __lt__ for <
 # __le__ for <=
