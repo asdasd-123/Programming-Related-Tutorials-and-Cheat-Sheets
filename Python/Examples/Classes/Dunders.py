@@ -141,3 +141,38 @@ print(AObject)              # Prints AObject(0, 1, 2, 3)
 AObject.pop()
 print(AObject)              # Prints AObject(0, 1, 2)
 print(AObject._hiddenlist)  # Prints [0, 1, 2]
+
+
+# ==========
+# Strongly hidden methods and attributes
+# Achieved using a double underscore at the beginning.
+# Python scrambles the name to make it inaccessible.
+# This is not for security, but to aviod conlficts with
+# other things with the same name.
+# They can be retrieved using _Object__method
+# ==========
+
+# This is a normal un-hidden class. egg can be accessed using spam().egg
+class Spam:
+    egg = 7
+
+    def print_egg(self):
+        print(self.egg)
+
+
+s1 = Spam()
+print(s1.egg)   # Prints 7
+s1.print_egg()  # Prints 7
+
+
+# This class hides the egg variable.
+class SpamH:
+    __egg = 7
+
+    def print_egg(self):
+        print(self.__egg)
+
+
+s2 = SpamH()
+# print(s2.__egg) This would return an "attribute error" because egg is hidden.
+print(s2._SpamH__egg)   # Prints 7
