@@ -111,3 +111,33 @@ myList1 = MyList(['a', 'b', 'c', 'd'])
 print(len(myList1))     # Prints 4
 print(myList1[2])       # Prints 'c'
 print(myList1[:2])      # Prints ['a', 'b']
+
+
+# ==========
+# Data hiding in classes
+# Python has no way to make a variable private in a class,
+# but it can mark them as not-intended to be changed externally.
+# This is achieved by naming it with a single _ at the beginning.
+# When a user imports it using "from abc import *", it will be ignored.
+# ==========
+class AObject:
+    def __init__(self, contents):
+        self._hiddenlist = list(contents)
+
+    def push(self, value):
+        self._hiddenlist.insert(0, value)
+
+    def pop(self):
+        return self._hiddenlist.pop(-1)
+
+    def __repr__(self):
+        return "AObject({})".format(self._hiddenlist)
+
+
+AObject = AObject([1, 2, 3])
+print(AObject)              # Prints AObject([1, 2, 3])
+AObject.push(0)
+print(AObject)              # Prints AObject(0, 1, 2, 3)
+AObject.pop()
+print(AObject)              # Prints AObject(0, 1, 2)
+print(AObject._hiddenlist)  # Prints [0, 1, 2]
