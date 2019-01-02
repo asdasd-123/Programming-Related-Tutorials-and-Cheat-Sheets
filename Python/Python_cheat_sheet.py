@@ -80,6 +80,11 @@ str[3:]                 # Return 4th to end characters - "t String"
 # using {} around the inputs
 msg = "Numbers: {0} {1} {2}".format(4, 5, 6.5)
 print(msg)
+# This is also a shorter way of doing it
+x = 5
+y = 4
+msg = f"These are my formatted numbers, {x}, {y}"
+print(msg)
 
 print("{0}{1}{0}".format("abra", "cad"))    # prints abracadabra for example
 a = "{x}, {y}".format(x=5, y=12)            # Can also use named arguments
