@@ -80,3 +80,32 @@ a = NumberA(4)
 b = NumberB(7)
 c = a + b
 print(c.x)  # prints out 11. It essentially calls B(7).__radd__(A(4())
+
+
+# ==========
+# Magic Methods for making classes act like containers
+# ==========
+# The common ones are:
+# __len__ for len()
+# __getitem__ for indexing
+# __setitem__ for assigning to indexed values
+# __delitem__ for deleting indexed values
+# __iter__ for iteration over objects (e.g., in for loops)
+# __contains__ for in
+# For example, below:
+
+class MyList:
+    def __init__(self, cont):
+        self.cont = cont
+
+    def __getitem__(self, index):
+        return self.cont[index]
+
+    def __len__(self):
+        return len(self.cont)
+
+
+myList1 = MyList(['a', 'b', 'c', 'd'])
+print(len(myList1))     # Prints 4
+print(myList1[2])       # Prints 'c'
+print(myList1[:2])      # Prints ['a', 'b']
