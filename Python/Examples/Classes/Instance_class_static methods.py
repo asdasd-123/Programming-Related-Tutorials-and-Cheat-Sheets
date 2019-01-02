@@ -10,15 +10,15 @@ https://realpython.com/instance-class-and-static-methods-demystified/
 # ==========
 class MyClass:
     def mymethod(self):
-        return "Instance method called", self
+        return "Instance method called", self   # Returns a tuple
 
     @classmethod
     def myclassmethod(cls):
-        return "Class method called", cls
+        return "Class method called", cls   # Returns a tuple
 
     @staticmethod
     def mystaticmethod():
-        return "Static method called"
+        return "Static method called"   # Returns a string
 
 # Instance Method:
 # The first one above is a normal 'instance' method.
@@ -47,3 +47,27 @@ class MyClass:
 # take others).
 # This method cannot modify the class or object instance. They have restricted
 # access to data, and normally used as a way to namespace methods.
+
+
+# ==========
+# Examples of calling them on an object
+# ==========
+obj = MyClass()
+
+# Instance method
+x = obj.mymethod()
+print(x)   
+# Prints ('Instance method called', <__main__.MyClass object at 0x035F4690>)
+# This also works the same as passing the object manually to a class as below:
+x = MyClass.mymethod(obj)
+print(x)
+
+# Class method
+x = obj.myclassmethod()
+print(x)
+# Prints ('Class method called', <class '__main__.MyClass'>)
+
+# Static method
+x = obj.mystaticmethod()
+print(x)
+# Prints Static method called
