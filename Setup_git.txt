@@ -8,6 +8,15 @@ download VSCode Gitignore template from :
 https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 then run 
+
+=============================================
+Getting .gitignore to actually recognise files
+=============================================
+- Commit all changes first (will lose uncommited ones)
+- git rm -r --cached .
+- git add .
+- git commit -m "fixed untracked files"
+
 =============================================
 Git Cheat Sheet
 =============================================
