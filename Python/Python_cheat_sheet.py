@@ -197,6 +197,14 @@ print('Key3' not in xDict)  # Prints False
 # Can also use 'get' to return a set value if not found (default 'none')
 print(xDict.get('key6', "not found"))    # Prints 'not found'
 
+# You can combine dictionaries using the below example
+aDict = {'a': 1, 'b': 2}
+bDict = {'b': 3, 'c': 4}
+
+cDict = {**aDict, **bDict}
+print(cDict)    # prints {'a': 1, 'b': 3, 'c': 4}.
+# Notice b is overwritten by the 2nd dictionary
+
 # ==============================================================
 # Sets
 # ==============================================================
