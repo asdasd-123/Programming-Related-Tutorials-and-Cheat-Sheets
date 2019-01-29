@@ -210,8 +210,8 @@ class Dog(Wolf):
 husky = Dog("Max", "grey")
 wolf = Wolf("wolf", "grey")
 
-husky.bark()
-wolf.bark()
+husky.bark()    # Prints "Woof"
+wolf.bark()     # Prints "Grr..."
 
 
 # ==========
