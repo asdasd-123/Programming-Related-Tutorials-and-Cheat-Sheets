@@ -187,7 +187,7 @@ class Cat(Animal):
 
 fido = Dog("Fido", "brown")
 print(fido.colour)
-fido.bark()
+fido.bark()     # Prints "Woof!"
 
 
 # ==========
