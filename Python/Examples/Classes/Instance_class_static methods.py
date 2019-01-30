@@ -178,3 +178,18 @@ print(f'{round(p.area(),2)} inch square')
 # For example:
 print(PizzaV3.circle_area(4))
 # Prints "50.26548245743669"
+
+# ==========
+# Final Takeaway points : 
+# ==========
+
+# Static and class methods are used to communicate the developers intent
+# and to help avoid accidental mis-use of a method.
+
+# Instance methods need a class instance (object) to have been created
+# and access the instance through "self".
+
+# Class methods dont need a class instance. they have access via "cls"
+
+# Static methods dont have access through either cls or self, but work
+# like regular functions.
