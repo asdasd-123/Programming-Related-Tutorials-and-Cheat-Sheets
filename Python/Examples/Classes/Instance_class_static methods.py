@@ -4,6 +4,8 @@ Following through the tutorial found here:
 https://realpython.com/instance-class-and-static-methods-demystified/
 """
 
+import math
+
 
 # ==========
 # A simple class with all three method types.
@@ -99,15 +101,80 @@ print(x)
 
 
 # ==========
-# More real-use examples
+# More real-use example
 # ==========
+# Example simple pizza class.
 class Pizza:
     def __init__(self, ingredients):
         self.ingredients = ingredients
 
     def __repr__(self):
-        return f'Pizza({self.ingredients!r}'
-        # Pizza(['cheese', 'tomatoes']
+        return f'Pizza({self.ingredients!r})'
+        # Pizza(['cheese', 'tomatoes'])
 
 
 print(Pizza(['cheese', 'tomatoes']))
+# Prints "Pizza(['cheese', 'tomatoes']" due to the __repr__ method
+
+
+# This new Pizza Class uses a classmethod to build a pizza
+# with set a set ingredient list.
+class PizzaV2:
+    def __init__(self, ingredients):
+        self.ingredients = ingredients
+
+    def __repr__(self):
+        return f'PizzaV2({self.ingredients!r})'
+
+    @classmethod
+    def margherita(cls):
+        return cls(['mozzarella', 'tomatoes'])
+
+    @classmethod
+    def prosciutto(cls):
+        return cls(['mozzarella', 'tomatoes', 'ham'])
+
+
+pizza1 = PizzaV2.margherita()
+# Genertates a PizzaV2 class with the ingredients already set
+print(pizza1)
+# Prints "PizzaV2(['mozzarella', 'tomatoes'])"
+
+pizza2 = PizzaV2.prosciutto()
+# Genertates a PizzaV2 class with the ingredients already set
+print(pizza2)
+# Prints "PizzaV2(['mozzarella', 'tomatoes', 'ham'])"
+
+
+# ==========
+# When to use static methods
+# ==========
+class PizzaV3:
+    def __init__(self, radius, ingredients):
+        self.radius = radius
+        self.ingredients = ingredients
+
+    def __repr__(self):
+        return (f'PizzaV3({self.radius}, '
+                f'{self.ingredients})')
+
+    def area(self):
+        return self.circle_area(self.radius)
+
+    @staticmethod
+    def circle_area(r):
+        return r ** 2 * math.pi
+
+
+p = PizzaV3(4, ['mozzaella', 'tomatoes'])
+print(p)
+# Prints "PizzaV3(4, ['mozzaella', 'tomatoes'])"
+
+print(f'{round(p.area(),2)} inch square')
+# Prints "50.27 inch square"
+
+# As nothing other than a radius needs to be supplied, it can be called
+# directly from the class without creating an object first.
+# For example:
+print(PizzaV3.circle_area(4))
+# Prints "50.26548245743669"
