@@ -183,8 +183,9 @@ print(f3)   # prints "Banana"
 # Dictionaries
 # ==============================================================
 xDict = {'Key1': 1, 'Key2': 2, 'Key3': 3, 'Key4': 4, 'Key5': 5}
+yDict = {}              # Creates an empty dictionary
 
-xDict['Key1']           # returns the item in Key1 - 1
+xDict['Key1']           # Returns the item in Key1 - 1
 xDict['KeyN'] = 'temp'  # Appends a new key with value 'temp'
 del xDict['KeyN']       # Deletes 'KeyN' from the Dictionary
 
