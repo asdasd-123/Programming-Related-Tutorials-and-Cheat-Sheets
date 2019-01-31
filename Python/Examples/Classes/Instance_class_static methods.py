@@ -187,7 +187,7 @@ class Rectangle:
     def __init__(self, width, height):
         self.width = width
         self.height = height
-    
+
     def calculate_area(self):
         return self.width * self.height
 
@@ -200,8 +200,29 @@ square = Rectangle.new_square(5)
 print(square.calculate_area())
 # Prints 25
 
+
 # ==========
-# Final Takeaway points : 
+# Example static method from sololearn
+# shows how you can validate inputs before creating an object.
+# ==========
+class PizzaV4:
+    def __init__(self, toppings):
+        self.toppings = list(toppings)
+
+    @staticmethod
+    def validate_topping(topping):
+        if topping == 'pineapple':
+            raise ValueError("No pineapples!")
+        else:
+            return True
+
+
+ingredients = ["cheese", "onions", "spam"]
+if all(PizzaV4.validate_topping(i) for i in ingredients):
+    pizza = PizzaV4(ingredients)
+
+# ==========
+# Final Takeaway points :
 # ==========
 
 # Static and class methods are used to communicate the developers intent
