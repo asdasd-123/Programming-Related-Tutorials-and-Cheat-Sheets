@@ -5,6 +5,7 @@ A property in a class is shown by adding the @property decorator.
 It allows you to read a method like a variable/attribute, as
 it allows you to call it without using brackets ().
 A common use of it is to create read-only class attributes.
+But these can still have logic involved
 Example below from sololearn comments section, user 'Aries Duke'
 ==============================================================
 """
@@ -58,3 +59,29 @@ abc.my_money = "£50"
 balance = abc.my_money
 print(balance)
 # Now prints "£50" because it is a real attribute
+
+
+# ==========
+# Example showing how functionality can be included.
+# It could also be used as an attribute to determine if you are allowed
+# access to a certain part of a game for example.
+# ==========
+class Person:
+    def __init__(self, age):
+        self.age = age
+
+    @property
+    def is_adult(self):
+        if self.age >= 18:
+            return True
+        else:
+            return False
+
+
+bob = Person(19)
+frank = Person(15)
+
+print(bob.is_adult)     # Prints "True"
+print(frank.is_adult)   # Prints "False"
+
+# Trying to bypass it by setting frank.is_adult = True would raise an error.
