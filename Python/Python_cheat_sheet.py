@@ -591,4 +591,17 @@ p = PointV3(3, 4)
 print("(x={0}, y={1}) Distance from origin is {2}".format(p.x, p.y, p.d_f_o()))
 # Prints (x=3, y=4) Distance from origin is 5.0
 
+# ==============================================================
+# Regular Expressions
+# ==============================================================
+# Regular expressions (RegEx) are tools for string manipulation.
+# Nearly all popular programming lanugages have a RegEx library due
+# to how useful they can be.
+# RegEx is essentially a pattern-recognition tool.
+# The two main functions are:
+# - Confirm that a string matches the set pattern
+# - Replace pieces of a string that match the pattern
+# ==============================================================
+
+
 input("Question here")      # console input
