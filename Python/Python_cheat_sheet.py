@@ -655,13 +655,13 @@ print(len(re.findall(pattern, "eggspamsausagespam")))
 # ============
 pattern = r"spam"
 
-# Comments below are for the first insance it finds. 
+# Comments below are for the first insance it finds.
 for x in re.finditer(pattern, "eggspamsausagespam"):
     print(x)            # Prints "<re.Match object; span=(3, 7), match='spam'>"
     print(x.group())    # String - Prints "spam"
     print(x.start())    # Int - Prints "3"
     print(x.end())      # Int - Prints "7"
-    print(x.span())     # A tuple - Prints (3, 7) 
+    print(x.span())     # A tuple - Prints (3, 7)
 
 # ============
 # re.sub(pattern, repl, string, max=0)
