@@ -67,15 +67,15 @@ y += 'eggs'             # 'spameggs' - same as y = y + 'eggs'
 # ==============================================================
 # Strings
 # ==============================================================
-str = "Test String"
+string = "Test String"
 
-str.lower()             # Converts to lowercase - "test string"
-str.upper()             # Converts to uppercase - "TEST STRING"
-len(str)                # Returns length of string - 11
-str.isalpha()           # Only letters? - False (space not a letter)
-str[0]                  # Return first character - "T"
-str[1:3]                # Return 2nd to 3rd (4th - 1) character - "es"
-str[3:]                 # Return 4th to end characters - "t String"
+string.lower()             # Converts to lowercase - "test string"
+string.upper()             # Converts to uppercase - "TEST STRING"
+len(string)                # Returns length of string - 11
+string.isalpha()           # Only letters? - False (space not a letter)
+string[0]                  # Return first character - "T"
+string[1:3]                # Return 2nd to 3rd (4th - 1) character - "es"
+string[3:]                 # Return 4th to end characters - "t String"
 r"Test String"          # The r indicates a 'Raw string'.
 #                         Raw strings ignore escape chars.
 #                         so \n would be printed etc
@@ -610,7 +610,7 @@ print("(x={0}, y={1}) Distance from origin is {2}".format(p.x, p.y, p.d_f_o()))
 # import re
 
 # ============
-# re.match()
+# re.match(pattern, string)
 # re.match checks if a pattern matches the START of a string.
 # (case sensitive)
 # ============
@@ -625,7 +625,7 @@ else:
 # Prints "Match!"
 
 # ============
-# re.search()
+# re.search(pattern, string)
 # Searches for a pattern ANYWHERE in a string.
 # ============
 pattern = r"spam"
@@ -637,13 +637,36 @@ else:
 # Prints "Match!"
 
 # ============
-# re.findall()
-# returns a list of all substrings that match the pattern.
+# re.findall(pattern, string)
+# Returns a list of all substrings that match the pattern.
 # ============
 pattern = r"spam"
 
 print(re.findall(pattern, "eggspamsausagespam"))
 # Prints ['spam', 'spam']
 
+# Can be combined with len() to find out how many instances were found
+print(len(re.findall(pattern, "eggspamsausagespam")))
+# Prints 2
+
+# ============
+# re.finditer(pattern, string)
+# Like findall but returns an iterable of all instances of the pattern found.
+# ============
+pattern = r"spam"
+
+# Comments below are for the first insance it finds. 
+for x in re.finditer(pattern, "eggspamsausagespam"):
+    print(x)            # Prints "<re.Match object; span=(3, 7), match='spam'>"
+    print(x.group())    # String - Prints "spam"
+    print(x.start())    # Int - Prints "3"
+    print(x.end())      # Int - Prints "7"
+    print(x.span())     # A tuple - Prints (3, 7) 
+
+# ============
+# re.sub(pattern, repl, string, max=0)
+# Subsitutes "max" instances of a pattern with a new string.
+# If max is left blank, then it replaces all instances.
+# ============
 
 # input("Question here")      # console input
