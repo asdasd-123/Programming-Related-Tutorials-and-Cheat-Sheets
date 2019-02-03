@@ -7,7 +7,7 @@ of a function to explain it's purpose
 It can be accessed and printed through
     function.__doc__
 """
-
+import re
 # ==============================================================
 # Variable Types
 # ==============================================================
@@ -604,7 +604,46 @@ print("(x={0}, y={1}) Distance from origin is {2}".format(p.x, p.y, p.d_f_o()))
 # The two main functions are:
 # - Confirm that a string matches the set pattern
 # - Replace pieces of a string that match the pattern
-# ==============================================================
+# ====================s==========================================
+
+# To use RegEx, you need to import it using:
+# import re
+
+# ============
+# re.match()
+# re.match checks if a pattern matches the START of a string.
+# (case sensitive)
+# ============
+# pattern here is a simple string, but it can be a set of instructions
+# i.e 2 numbers followed by 3 letters
+pattern = r"spam"
+
+if re.match(pattern, "spamspamspamspam"):
+    print("Match!")
+else:
+    print("No Match!")
+# Prints "Match!"
+
+# ============
+# re.search()
+# Searches for a pattern ANYWHERE in a string.
+# ============
+pattern = r"spam"
+
+if re.match(pattern, "eggspamsausagespam"):
+    print("Match!")
+else:
+    print("No Match!")
+# Prints "Match!"
+
+# ============
+# re.findall()
+# returns a list of all substrings that match the pattern.
+# ============
+pattern = r"spam"
+
+print(re.findall(pattern, "eggspamsausagespam"))
+# Prints ['spam', 'spam']
 
 
-input("Question here")      # console input
+# input("Question here")      # console input
