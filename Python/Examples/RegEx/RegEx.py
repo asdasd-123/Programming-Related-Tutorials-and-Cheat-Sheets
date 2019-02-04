@@ -31,6 +31,7 @@ import re
 # .     - Any single character
 # ^     - Start of the string
 # $     - End of the string
+# []    - Character classes
 
 # ==========
 # Metacharacter : . (any char)
@@ -90,4 +91,21 @@ if re.search(pattern, "grayabc"):    # Will not pass as a match
     print("Match 2")
 
 if re.search(pattern, "abcgrey"):    # Will not pass as a match
+    print("Match 3")
+
+# ==========
+# Metacharacters : [] (character classes)
+# ==========
+# Square brackets are used to dictate a set of characters that
+# could match. Like a more restrictive version of the .(dot) character.
+pattern = r"[aeiou]"    # This means that any single vowel
+#                         will flag as a match.
+
+if re.search(pattern, "grey"):      # Will pass as a match
+    print("Match 1")
+
+if re.search(pattern, "qwertyui"):  # Will pass as a match
+    print("Match 2")
+
+if re.search(pattern, "rhythm"):    # Will not pass as a match
     print("Match 3")
