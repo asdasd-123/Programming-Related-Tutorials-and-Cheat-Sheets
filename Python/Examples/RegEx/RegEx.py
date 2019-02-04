@@ -38,13 +38,13 @@ import re
 # Matches any single character. For example:
 pattern = r"gr.y"
 
-if re.match(pattern, "grey"):   # Will pass as a match
+if re.search(pattern, "grey"):   # Will pass as a match
     print("Match 1")
 
-if re.match(pattern, "gray"):   # Will pass as a match
+if re.search(pattern, "gray"):   # Will pass as a match
     print("Match 2")
 
-if re.match(pattern, "blue"):   # Will not pass as a match
+if re.search(pattern, "blue"):   # Will not pass as a match
     print("Match 3")
 
 # ==========
@@ -54,13 +54,13 @@ if re.match(pattern, "blue"):   # Will not pass as a match
 # start of the string.
 pattern = r"^gr.y"
 
-if re.match(pattern, "grey"):       # Will pass as a match
+if re.search(pattern, "grey"):       # Will pass as a match
     print("Match 1")
 
-if re.match(pattern, "grayabc"):    # Will pass as a match
+if re.search(pattern, "grayabc"):    # Will pass as a match
     print("Match 2")
 
-if re.match(pattern, "abcgray"):    # Will not pass as a match
+if re.search(pattern, "abcgray"):    # Will not pass as a match
     print("Match 3")
 
 # ==========
@@ -70,24 +70,24 @@ if re.match(pattern, "abcgray"):    # Will not pass as a match
 # end of the string.
 pattern = r"gr.y$"
 
-if re.match(pattern, "grey"):       # Will pass as a match
+if re.search(pattern, "grey"):       # Will pass as a match
     print("Match 1")
 
-if re.match(pattern, "grayabc"):    # Will not pass as a match
+if re.search(pattern, "grayabc"):    # Will not pass as a match
     print("Match 2")
 
-if re.match(pattern, "abcgrey"):    # Will pass as a match
+if re.search(pattern, "abcgrey"):    # Will pass as a match
     print("Match 3")
 
 # You can combined the start^ and end$ characters as follows
 # to make sure the pattern matches the whole string, not just part of it.
 pattern = r'^gr.y$'
 
-if re.match(pattern, "gray"):       # Will pass as a match
+if re.search(pattern, "gray"):       # Will pass as a match
     print("Match 1")
 
-if re.match(pattern, "grayabc"):    # Will not pass as a match
+if re.search(pattern, "grayabc"):    # Will not pass as a match
     print("Match 2")
 
-if re.match(pattern, "abcgrey"):    # Will not pass as a match
+if re.search(pattern, "abcgrey"):    # Will not pass as a match
     print("Match 3")
