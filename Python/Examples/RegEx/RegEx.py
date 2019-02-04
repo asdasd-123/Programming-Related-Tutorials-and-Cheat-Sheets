@@ -18,5 +18,29 @@ import re
 # Issues arise though due to \ being the normal escape character in
 # strings already, which can lead to instances where you need
 # 3 or 4 backslashes.
-# 
+#
 # To mitigate this issue, use raw strings can be used.
+
+# All metecharacters:
+# . ^ $ * + ? { [ ] \ | ( ) }
+
+# ==========
+# Metacharacter summary:
+# . ^ $ * + ? { [ ] \ | ( ) }
+# ==========
+# .     - Any single character
+
+# ==========
+# Metacharacter : . (dot)
+# ==========
+# Matches any single character. For example:
+pattern = r"gr.y"
+
+if re.match(pattern, "grey"):   # Will pass as a match
+    print("Match 1")
+
+if re.match(pattern, "gray"):   # Will pass as a match
+    print("Match 2")
+
+if re.match(pattern, "blue"):   # Will not pass as a match
+    print("Match 3")
