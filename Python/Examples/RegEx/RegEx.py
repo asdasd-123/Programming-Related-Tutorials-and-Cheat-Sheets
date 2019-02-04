@@ -109,3 +109,24 @@ if re.search(pattern, "qwertyui"):  # Will pass as a match
 
 if re.search(pattern, "rhythm"):    # Will not pass as a match
     print("Match 3")
+
+# Character classes can also include ranges using the - character.
+pattern = r"[0-9][0-9]"     # This will only match a string with
+#                             two consecutive numbers in it.
+
+if re.search(pattern, "abs6jdf9"):  # Will not pass as a match
+    print("Match 1")
+
+if re.search(pattern, "abs45sks"):  # Will pass as a match
+    print("Match 2")
+
+# Ranges can be combined inside a single character class too.
+pattern = r"[A-Za-z0-9]"    # will match any single letter or number
+#                             regardless of case, but will not match
+#                             any special characters.
+
+if re.search(pattern, "s4F9k"):     # Will pass as a match
+    print("Match 1")
+
+if re.search(pattern, r"!£"):       # Will not pass as a match
+    print("Match 2")
