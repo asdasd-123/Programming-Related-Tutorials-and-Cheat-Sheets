@@ -43,10 +43,10 @@ import re
 # Matches any single character. For example:
 pattern = r"gr.y"
 
-if re.search(pattern, "grey"):   # Will pass as a match
+if re.search(pattern, "grey"):   # Will pass as a match (grey)
     print("Match 1")
 
-if re.search(pattern, "gray"):   # Will pass as a match
+if re.search(pattern, "gray"):   # Will pass as a match (gray)
     print("Match 2")
 
 if re.search(pattern, "blue"):   # Will not pass as a match
@@ -59,10 +59,10 @@ if re.search(pattern, "blue"):   # Will not pass as a match
 # start of the string.
 pattern = r"^gr.y"
 
-if re.search(pattern, "grey"):       # Will pass as a match
+if re.search(pattern, "grey"):       # Will pass as a match (grey)
     print("Match 1")
 
-if re.search(pattern, "grayabc"):    # Will pass as a match
+if re.search(pattern, "grayabc"):    # Will pass as a match (gray)
     print("Match 2")
 
 if re.search(pattern, "abcgray"):    # Will not pass as a match
@@ -75,20 +75,20 @@ if re.search(pattern, "abcgray"):    # Will not pass as a match
 # end of the string.
 pattern = r"gr.y$"
 
-if re.search(pattern, "grey"):       # Will pass as a match
+if re.search(pattern, "grey"):       # Will pass as a match (grey)
     print("Match 1")
 
 if re.search(pattern, "grayabc"):    # Will not pass as a match
     print("Match 2")
 
-if re.search(pattern, "abcgrey"):    # Will pass as a match
+if re.search(pattern, "abcgrey"):    # Will pass as a match (grey)
     print("Match 3")
 
 # You can combined the start^ and end$ characters as follows
 # to make sure the pattern matches the whole string, not just part of it.
 pattern = r'^gr.y$'
 
-if re.search(pattern, "gray"):       # Will pass as a match
+if re.search(pattern, "gray"):       # Will pass as a match (gray)
     print("Match 1")
 
 if re.search(pattern, "grayabc"):    # Will not pass as a match
@@ -105,10 +105,10 @@ if re.search(pattern, "abcgrey"):    # Will not pass as a match
 pattern = r"[aeiou]"    # This means that any single vowel
 #                         will flag as a match.
 
-if re.search(pattern, "grey"):      # Will pass as a match
+if re.search(pattern, "grey"):      # Will pass as a match (e)
     print("Match 1")
 
-if re.search(pattern, "qwertyui"):  # Will pass as a match
+if re.search(pattern, "qwertyui"):  # Will pass as a match (e,u,i)
     print("Match 2")
 
 if re.search(pattern, "rhythm"):    # Will not pass as a match
@@ -121,7 +121,7 @@ pattern = r"[0-9][0-9]"     # This will only match a string with
 if re.search(pattern, "abs6jdf9"):  # Will not pass as a match
     print("Match 1")
 
-if re.search(pattern, "abs45sks"):  # Will pass as a match
+if re.search(pattern, "abs45sks"):  # Will pass as a match (45)
     print("Match 2")
 
 # Ranges can be combined inside a single character class too.
@@ -129,7 +129,7 @@ pattern = r"[A-Za-z0-9]"    # will match any single letter or number
 #                             regardless of case, but will not match
 #                             any special characters.
 
-if re.search(pattern, "s4F9k"):     # Will pass as a match
+if re.search(pattern, "s4F9k"):     # Will pass as a match (s,4,F,9,k)
     print("Match 1")
 
 if re.search(pattern, r"!£"):       # Will not pass as a match
@@ -143,7 +143,7 @@ pattern = r"[^A-Z]"     # Will not match uppercase letters.
 if re.search(pattern, "ABCD"):  # Will not pass as a match
     print("Match 1")
 
-if re.search(pattern, "ab9d"):  # Will pass as a match
+if re.search(pattern, "ab9d"):  # Will pass as a match (a,b,9,d)
     print("Match 2")
 
 # ==========
