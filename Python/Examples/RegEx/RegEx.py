@@ -28,10 +28,10 @@ import re
 # Metacharacter summary:
 # . ^ $ * + ? { [ ] \ | ( ) }
 # ==========
-# .     - Any single character
-# ^     - Start of the string
-# $     - End of the string
-# []    - Character classes
+# .str      - Any single character
+# ^str      - Start of the string
+# $str      - End of the string
+# [str]     - Character classes
 
 # ==========
 # Metacharacter : . (any char)
@@ -130,3 +130,4 @@ if re.search(pattern, "s4F9k"):     # Will pass as a match
 
 if re.search(pattern, r"!£"):       # Will not pass as a match
     print("Match 2")
+
