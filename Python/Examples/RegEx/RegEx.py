@@ -78,3 +78,16 @@ if re.match(pattern, "grayabc"):    # Will not pass as a match
 
 if re.match(pattern, "abcgrey"):    # Will pass as a match
     print("Match 3")
+
+# You can combined the start^ and end$ characters as follows
+# to make sure the pattern matches the whole string, not just part of it.
+pattern = r'^gr.y$'
+
+if re.match(pattern, "gray"):       # Will pass as a match
+    print("Match 1")
+
+if re.match(pattern, "grayabc"):    # Will not pass as a match
+    print("Match 2")
+
+if re.match(pattern, "abcgrey"):    # Will not pass as a match
+    print("Match 3")
