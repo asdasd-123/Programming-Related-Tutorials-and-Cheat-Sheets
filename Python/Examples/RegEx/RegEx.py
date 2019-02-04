@@ -30,6 +30,7 @@ import re
 # ==========
 # .     - Any single character
 # ^     - Start of the string
+# $     - End of the string
 
 # ==========
 # Metacharacter : . (any char)
@@ -60,4 +61,20 @@ if re.match(pattern, "grayabc"):    # Will pass as a match
     print("Match 2")
 
 if re.match(pattern, "abcgray"):    # Will not pass as a match
+    print("Match 3")
+
+# ==========
+# Metacharacter : $ (end of string)
+# ==========
+# The end of a string. The following must occur directly at the
+# end of the string.
+pattern = r"gr.y$"
+
+if re.match(pattern, "grey"):       # Will pass as a match
+    print("Match 1")
+
+if re.match(pattern, "grayabc"):    # Will not pass as a match
+    print("Match 2")
+
+if re.match(pattern, "abcgrey"):    # Will pass as a match
     print("Match 3")
