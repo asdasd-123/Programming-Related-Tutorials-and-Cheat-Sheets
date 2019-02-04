@@ -32,6 +32,7 @@ import re
 # ^str      - Start of the string
 # $str      - End of the string
 # [str]     - Character classes
+# [^str]    - Inverted character classes
 
 # ==========
 # Metacharacter : . (any char)
@@ -131,3 +132,13 @@ if re.search(pattern, "s4F9k"):     # Will pass as a match
 if re.search(pattern, r"!£"):       # Will not pass as a match
     print("Match 2")
 
+# ==========
+# Metacharacters : [^] (inverted character classes)
+# ==========
+pattern = r"[^A-Z]"     # Will not match uppercase letters.
+
+if re.search(pattern, "ABCD"):  # Will not pass as a match
+    print("Match 1")
+
+if re.search(pattern, "ab9d"):  # Will pass as a match
+    print("Match 2")
