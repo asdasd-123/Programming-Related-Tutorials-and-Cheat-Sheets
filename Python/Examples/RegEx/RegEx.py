@@ -25,14 +25,17 @@ import re
 # . ^ $ * + ? { [ ] \ | ( ) }
 
 # ==========
-# Metacharacter summary:
+# Metacharacter summary: (s for character)
 # . ^ $ * + ? { [ ] \ | ( ) }
 # ==========
-# .str      - Any single character
-# ^str      - Start of the string
-# $str      - End of the string
-# [str]     - Character classes
-# [^str]    - Inverted character classes
+# .s        - Any single character
+# ^s        - Start of the string
+# s$        - End of the string
+# [s]       - Character classes
+# [^s]      - Inverted character classes
+# s*        - Zero or more repetitions of previous character
+# [s]*      - Zero or more repetitions of previous class
+# (s)*      - Zero or more repetitions of previous group
 
 # ==========
 # Metacharacter : . (any char)
@@ -142,3 +145,16 @@ if re.search(pattern, "ABCD"):  # Will not pass as a match
 
 if re.search(pattern, "ab9d"):  # Will pass as a match
     print("Match 2")
+
+# ==========
+# Metacharacters : * (zero or more repetitions of previous thing)
+# ==========
+pattern = r'ac*'  # Will match any string with a, followed by zero or more c's
+
+if re.search(pattern, "and"):   # Will pass as a match (a)
+    print("Match 1")
+
+if re.search(pattern, "acc"):   # Will pass as a match (acc)
+    print("Match 2")
+
+if re.search(pattern, "uek"):   # Will not pass as a match
