@@ -604,6 +604,7 @@ print("(x={0}, y={1}) Distance from origin is {2}".format(p.x, p.y, p.d_f_o()))
 # The two main functions are:
 # - Confirm that a string matches the set pattern
 # - Replace pieces of a string that match the pattern
+# More in-depth breakdown on pattern characters in "Examples/RegEx/RegEx.py"
 # ====================s==========================================
 
 # To use RegEx, you need to import it using:
@@ -664,9 +665,21 @@ for x in re.finditer(pattern, "eggspamsausagespam"):
     print(x.span())     # A tuple - Prints (3, 7)
 
 # ============
-# re.sub(pattern, repl, string, max=0)
+# re.sub(pattern, repl, string, count=0, flags=0)
 # Subsitutes "max" instances of a pattern with a new string.
 # If max is left blank, then it replaces all instances.
 # ============
+input_str = r"Test String : abc / Test String : abc"
+pattern = r"abc"
+
+# Example WITHOUT a count being supplied
+new_str = re.sub(pattern, "def", input_str)
+print(new_str)
+# Prints "Test String : def / Test String : def"
+
+# Example WITH a count being supplied (only 1st is changed)
+new_str = re.sub(pattern, "def", input_str, 1)
+print(new_str)
+# Prints "Test String : def / Test String : abc"
 
 # input("Question here")      # console input
