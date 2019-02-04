@@ -32,7 +32,7 @@ import re
 # ^     - Start of the string
 
 # ==========
-# Metacharacter : . (dot)
+# Metacharacter : . (any char)
 # ==========
 # Matches any single character. For example:
 pattern = r"gr.y"
@@ -47,7 +47,7 @@ if re.match(pattern, "blue"):   # Will not pass as a match
     print("Match 3")
 
 # ==========
-# Metacharacter : ^
+# Metacharacter : ^ (start of string)
 # ==========
 # The start of a string. The following must occur directly at the
 # start of the string.
