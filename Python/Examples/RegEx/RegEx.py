@@ -158,3 +158,4 @@ if re.search(pattern, "acc"):   # Will pass as a match (acc)
     print("Match 2")
 
 if re.search(pattern, "uek"):   # Will not pass as a match
+    print("Match 3")
