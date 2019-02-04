@@ -148,6 +148,7 @@ if re.search(pattern, "ab9d"):  # Will pass as a match (a,b,9,d)
 
 # ==========
 # Metacharacters : * (zero or more repetitions of previous thing)
+# Will match one with most repetitions
 # ==========
 pattern = r'ac*'  # Will match any string with a, followed by zero or more c's
 
@@ -158,4 +159,48 @@ if re.search(pattern, "acc"):   # Will pass as a match (acc)
     print("Match 2")
 
 if re.search(pattern, "uek"):   # Will not pass as a match
+    print("Match 3")
+
+# Can also be used as follows inbetween other letters
+pattern = r'ac*b'
+
+if re.search(pattern, "and"):   # Will not pass as a match
+    print("Match 1")
+
+if re.search(pattern, "acc"):   # Will not pass as a match
+    print("Match 2")
+
+if re.search(pattern, "acb"):   # Will pass as a match (acb)
+    print("Match 3")
+
+if re.search(pattern, "accb"):  # Will pass as a match (accb)
+    print("Match 4")
+
+if re.search(pattern, "fab"):   # Will pass as a match (ab)
+    print("Match 5")
+
+# Can be used with classes aswell, as follows
+pattern = r'[0-9][0-9]*$'    # Will match all trailing numbers from string
+# i.e [0-9] plus zero or more other [0-9]'s at the end
+
+if re.search(pattern, "a9r"):   # Will not pass as a match
+    print("Match 1")
+
+if re.search(pattern, "b90"):   # Will pass as a match (90)
+    print("Match 2")
+
+if re.search(pattern, "654"):   # Will pass as a match (654)
+    print("Match 3")
+
+# Can also be used with groups, using ()
+pattern = r'[a-z][0-9]([a-z][0-9])*'
+# Will pick out letter-number pairs, will pick out as many repeating as poss
+
+if re.search(pattern, "a:5142"):    # Will pass as a match (a:5142)
+    print("Match 1")
+
+if re.search(pattern, "ueja:5sw"):  # Will pass as a match (a:5)
+    print("Match 2")
+
+if re.search(pattern, "a:a5sa"):    # Will not pass as a match
     print("Match 3")
