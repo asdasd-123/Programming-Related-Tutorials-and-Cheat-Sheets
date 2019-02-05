@@ -335,6 +335,7 @@ dict = {}
 for v in enumerate(nums):
     key = v[0]
     dict[key] = v[1]
+print("dict:")
 print(dict)
 
 # ==============================================================
