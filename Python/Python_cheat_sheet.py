@@ -1,3 +1,10 @@
+"""
+My python cheat sheet.
+More in-depth explanation on almost everything at here though:
+https://gto76.github.io/python-cheatsheet/
+
+"""
+
 # ==============================================================
 # Docstrings
 # ==============================================================
