@@ -3,6 +3,8 @@ My python cheat sheet.
 More in-depth explanation on almost everything at here though:
 https://gto76.github.io/python-cheatsheet/
 
+Loads of useful modules here:
+https://github.com/vinta/awesome-python
 """
 
 # ==============================================================
