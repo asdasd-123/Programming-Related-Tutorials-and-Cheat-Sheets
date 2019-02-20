@@ -1,3 +1,4 @@
+import re
 """
 My python cheat sheet.
 More in-depth explanation on almost everything at here though:
@@ -16,7 +17,7 @@ of a function to explain it's purpose
 It can be accessed and printed through
     function.__doc__
 """
-import re
+
 # ==============================================================
 # Variable Types
 # ==============================================================
