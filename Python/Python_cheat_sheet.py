@@ -209,7 +209,10 @@ print('abc' not in xDict)   # Prints True
 print('Key3' not in xDict)  # Prints False
 
 # Can also use 'get' to return a set value if not found (default 'none')
-print(xDict.get('key6', "not found"))    # Prints 'not found'
+print(xDict.get('key6', "not found"))    # Prints 'not found
+
+# To delete an item from a dictionary
+del xDict['Key1']
 
 # You can combine dictionaries using the below example
 aDict = {'a': 1, 'b': 2}
