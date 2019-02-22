@@ -222,6 +222,15 @@ cDict = {**aDict, **bDict}
 print(cDict)    # prints {'a': 1, 'b': 3, 'c': 4}.
 # Notice b is overwritten by the 2nd dictionary
 
+# To loop through a dictionary
+for key, value in xDict.items():
+    print(key)
+    print(value)
+
+# To just loop though keys
+for key in xDict:
+    print(key)
+
 # ==============================================================
 # Sets
 # ==============================================================
