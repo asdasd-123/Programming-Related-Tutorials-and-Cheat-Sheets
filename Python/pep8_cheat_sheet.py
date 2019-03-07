@@ -15,5 +15,5 @@ pep8 is a styling convention for python.
 # Classes:
 # CapCase
 
-# Functions & Variables:
+# Functions / Variables / Methods / Instance Variables:
 # all lowercase, with words separated by underscores as necessary
