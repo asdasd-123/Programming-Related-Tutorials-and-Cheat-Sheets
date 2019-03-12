@@ -173,6 +173,14 @@ cubes = [i**3 for i in range(5)]    # for loops can also be used
 evens = [i**2 for i in range(10) if i**2 % 2 == 0]
 # returns 0,4,16,36,64
 
+# To loop through a list normally
+for item in xlist:
+    print(item)
+
+# To loop through a lists contents and indexes use enumerate (explained below)
+for index, value in enumerate(xlist):
+    print(index, item)
+
 # ==============================================================
 # Tuples
 # ==============================================================
