@@ -39,3 +39,28 @@ addresses = Table('addresses', metadata,
 
 # Now to actually create the tables we've specified above
 metadata.create_all(eng)
+print('--------')
+
+# ============
+# Inserting into tables
+# ============
+ins = users.insert()
+print(ins)
+# Prints INSERT INTO users (id, name, fullname) VALUES (:id, :name, :fullname)
+
+ins = users.insert().values(name='test', fullname='Test Name')
+print(ins)
+# Prints INSERT INTO users (name, fullname) VALUES (:name, :fullname)
+# Notice it still only shows the placeholders for the insert values
+# To see the actual values, use the below:
+print(ins.compile().params)
+
+# To actually execute the query (insert).
+# To do that, we need to set up a connection.
+conn = eng.connect()
+
+# "The Connection object represents an actively checked out
+# DBAPI connection resource."
+
+# Now you can send it the insert statement we'e set up.
+result = conn.execute(ins)
