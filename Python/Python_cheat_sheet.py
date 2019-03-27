@@ -179,7 +179,7 @@ for item in xlist:
 
 # To loop through a lists contents and indexes use enumerate (explained below)
 for index, value in enumerate(xlist):
-    print(index, item)
+    print(index, value)
 
 # ==============================================================
 # Tuples
