@@ -14,6 +14,7 @@ https://docs.sqlalchemy.org/en/latest/core/tutorial.html
 # The rest are used below in 'Creating tables'
 from sqlalchemy import (create_engine, Table, Column,
                         Integer, String, MetaData, ForeignKey)
+from sqlalchemy.sql import select
 
 
 # ============
@@ -85,3 +86,30 @@ list_of_dicts = [
 ]
 conn.execute(ins, list_of_dicts)
 
+# ============
+# Selecting
+# ============
+s = select([users])
+result = conn.execute(s)
+print("-----------")
+for row in result:
+    print(row)
+result.close()  # always close it
+# Prints a tuple like result:
+# (1, 'test', 'Test Name')
+# (2, 'test', 'test2')
+print("-----------")
+
+# You can also access the results similar to a dictionary.
+result = conn.execute(s)
+for row in result:
+    print('test')
+result.close()  # always close it
+print("-----------")
+
+# Can also use column objects directly.
+for row in conn.execute(s):
+    print("name:", row[users.c.name], "; fullname:", row[users.c.fullname])
+# name: test ; fullname: Test Name
+# name: test ; fullname: test2
+print("-----------")
