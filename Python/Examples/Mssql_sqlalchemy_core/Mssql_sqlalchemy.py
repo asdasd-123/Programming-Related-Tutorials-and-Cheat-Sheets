@@ -64,3 +64,9 @@ conn = eng.connect()
 
 # Now you can send it the insert statement we'e set up.
 result = conn.execute(ins)
+
+# ============
+# Shortening the insert to make it simpler.
+# ============
+ins = users.insert()
+conn.execute(ins, id=2, name="test", fullname="test2")
