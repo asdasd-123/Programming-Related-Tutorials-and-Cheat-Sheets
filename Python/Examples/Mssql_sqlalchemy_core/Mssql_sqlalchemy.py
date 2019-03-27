@@ -70,3 +70,18 @@ result = conn.execute(ins)
 # ============
 ins = users.insert()
 conn.execute(ins, id=2, name="test", fullname="test2")
+
+# ============
+# Execute many (works with insert(), update(), and delete()
+# ============
+# When inserting many items into a db, a 'LIST of DICTS' can be supplied.
+# An example below:
+ins = addresses.insert()
+list_of_dicts = [
+    {'user_id': 1, 'email_address': 'testemail1@gmail.com'},
+    {'user_id': 1, 'email_address': 'testemail2@gmail.com'},
+    {'user_id': 2, 'email_address': 'testemail3@gmail.com'},
+    {'user_id': 2, 'email_address': 'testemail4@gmail.com'}
+]
+conn.execute(ins, list_of_dicts)
+
